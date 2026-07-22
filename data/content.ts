@@ -1,0 +1,213 @@
+export type PageContent = {
+  slug: string;
+  title: string;
+  eyebrow?: string;
+  description: string;
+  intro: string;
+  sections: { title: string; text: string; bullets?: string[]; note?: string }[];
+  faq?: { question: string; answer: string }[];
+};
+
+export const commonFaqs = [
+  { question: "Will solar eliminate my electricity bill completely?", answer: "Not necessarily. Your result depends on electricity use, system size, seasonal production, utility charges and export credits. A proposal should show realistic bill-offset assumptions instead of promising a zero bill." },
+  { question: "Do solar panels still produce electricity during an Alberta winter?", answer: "Yes. Panels use daylight rather than heat and can operate efficiently in cold conditions. Shorter days, snow cover, shading and weather still affect seasonal production, so annual modelling matters." },
+  { question: "Will my solar panels keep the power on during an outage?", answer: "A standard grid-connected system normally shuts down during an outage for safety. Backup power generally requires compatible battery equipment and system design specifically intended for backup operation." },
+  { question: "What if my roof needs to be replaced in a few years?", answer: "Roof age and condition should be reviewed before installation. If replacement is likely soon, it may be more practical to complete the roofing work first rather than pay to remove and reinstall the array later." },
+  { question: "What happens when my panels produce more electricity than I am using?", answer: "An approved micro-generation system may export unused electricity to the grid. The credit structure depends on your retailer, utility arrangements and current terms for the property." },
+  { question: "What should I have ready before requesting a solar proposal?", answer: "A recent electricity bill, ideally twelve months of usage, the property address and any plans for future loads such as an EV or new equipment give the assessment a stronger starting point." },
+];
+
+const residentialFaqs = [
+  { question: "How do I know whether my roof gets enough sunlight for solar?", answer: "Roof direction, pitch, nearby trees, chimneys, neighbouring buildings and usable roof area all matter. A property-specific shade and layout review is more useful than judging the roof from street level." },
+  { question: "Can panels be installed on more than one side of my roof?", answer: "Yes. Multiple roof planes can be used when the layout, shading and electrical design make sense. The proposal should explain how each roof section contributes to estimated annual production." },
+  { question: "Should I size solar for an electric vehicle I plan to buy?", answer: "Future electricity use can be considered when it is reasonably understood. Expected driving, charging habits and other planned loads should be discussed before final system sizing." },
+  { question: "What if I sell my home after installing solar?", answer: "The system, warranties, financing and utility arrangements should be documented clearly. Speak with your real-estate and legal professionals about how ownership or financing would be handled during a sale." },
+  { question: "Will installation damage my shingles or cause roof leaks?", answer: "A responsible design uses mounting and flashing methods suited to the roof type and condition. Roof condition, attachment locations and waterproofing details should be reviewed before work begins." },
+  { question: "Can I add a battery later?", answer: "Sometimes. Future battery readiness depends on the inverter, electrical design, available space and the equipment ecosystem selected. Mention this goal during the initial assessment even if a battery is not part of the first phase." },
+];
+
+const commercialFaqs = [
+  { question: "Can solar installation be planned without shutting down our operations?", answer: "Often the work can be staged around operating hours and access requirements, but electrical tie-ins may require a planned interruption. The schedule should identify disruption risks before construction." },
+  { question: "Is an older commercial roof suitable for solar?", answer: "Roof structure, membrane condition, remaining service life, drainage and warranty requirements all need review. If major roof work is approaching, coordinating both projects may reduce future removal costs." },
+  { question: "What electricity information is needed for a commercial assessment?", answer: "Twelve months of bills are a useful start. Interval data, demand charges, operating schedules, planned equipment and information about multiple meters can make the analysis more representative." },
+  { question: "Can one proposal cover several buildings or utility meters?", answer: "Yes, but each building and meter may have different loads, roof conditions and interconnection constraints. A portfolio review should show which sites offer the strongest practical fit." },
+  { question: "How is commercial solar performance monitored?", answer: "Monitoring can show system production, equipment status and historical trends. Reporting needs should be discussed early if facilities, finance or sustainability teams require shared access or portfolio-level views." },
+  { question: "Are commercial tax incentives or grants guaranteed?", answer: "No. Programs, eligibility and tax treatment can change and depend on the organization and project. Current official rules and advice from qualified tax and financial professionals should guide decisions." },
+];
+
+const agriculturalFaqs = [
+  { question: "Is a barn roof or a ground-mounted array better for my farm?", answer: "It depends on roof condition, structural suitability, available land, shading, service location, working traffic and expansion plans. A site review can compare both options against the farm's actual loads." },
+  { question: "Can solar be sized around irrigation or grain-drying loads?", answer: "Those loads can be included, but their timing and seasonality matter. Equipment ratings, operating schedules and historical usage help determine how well demand aligns with solar production." },
+  { question: "Will a ground mount interfere with farm equipment or livestock?", answer: "Placement should account for machinery routes, snow management, drainage, fencing, setbacks and future land use. These practical constraints belong in the site plan from the beginning." },
+  { question: "Can several farm buildings connect to one solar project?", answer: "Potentially, but meter configuration, electrical distribution, distance between buildings and utility requirements affect the design. The electrical arrangement must be reviewed before assuming loads can be combined." },
+  { question: "How much maintenance does a rural solar array require?", answer: "Solar systems are generally low maintenance, but monitoring, visual inspections, vegetation control and access after severe weather are important. The handover should explain responsibilities and support contacts." },
+  { question: "Should future farm expansion be included in the proposal?", answer: "Yes. Planned shops, ventilation, pumping, refrigeration, electric equipment or service upgrades may influence system size and placement even if they are not operating today." },
+];
+
+const incentivesFaqs = [
+  { question: "How can I tell whether a solar incentive I found online is still active?", answer: "Confirm it on the official government, municipality, utility or program-administrator website. Older articles and advertisements may remain online after funding closes or eligibility changes." },
+  { question: "Should an incentive be included in the project price before approval?", answer: "Treat unapproved funding cautiously. The proposal should distinguish confirmed amounts from potential programs and explain who is responsible for the application and eligibility checks." },
+  { question: "Can financing make the monthly payment equal to my old power bill?", answer: "Sometimes comparisons appear close, but financing cost, term, rate changes, utility charges and actual production all matter. Compare total cost and assumptions, not only one monthly number." },
+  { question: "Do businesses and farms receive the same programs as homeowners?", answer: "Usually not. Residential, commercial and agricultural projects may fall under different tax rules, financing products or program criteria. Each applicant and property needs a current review." },
+  { question: "Who should confirm tax credits or deductions?", answer: "Use official guidance and a qualified tax professional familiar with your organization and project. Website information and preliminary proposals should not be treated as tax advice." },
+];
+
+const howSolarWorksFaqs = [
+  { question: "Does my property use solar power before electricity from the grid?", answer: "A grid-connected property generally uses solar electricity as it is produced, with the grid supplying additional power when demand is higher than solar production." },
+  { question: "What does the inverter do?", answer: "Panels produce direct-current electricity. The inverter converts it into alternating current that the property can use and also provides operating and monitoring information." },
+  { question: "Why does actual production change from month to month?", answer: "Day length, weather, temperature, snow, shading and household or business conditions vary throughout the year. Annual estimates are more useful than expecting equal monthly production." },
+  { question: "Can I see how much electricity my panels are producing?", answer: "Most modern systems include monitoring. The exact information and access depend on the selected inverter and platform, and monitoring should be set up during commissioning." },
+  { question: "Does the system need regular manual operation?", answer: "Normally, no. A commissioned grid-connected system operates automatically, while monitoring helps identify unusual performance or equipment alerts that may need attention." },
+];
+
+export const pages: PageContent[] = [
+  {
+    slug: "residential-solar",
+    title: "Residential Solar Designed Around Your Home",
+    description: "Explore custom residential solar installation for Calgary homes, from roof assessment and micro-generation to monitoring and winter performance.",
+    intro: "A good home solar system starts with how your household uses electricity—not a one-size-fits-all panel count.",
+    sections: [
+      { title: "A system that fits the property", text: "We review your electricity history, roof planes, orientation, shading, roof condition and future energy plans before recommending a layout.", bullets: ["Consumption-led system sizing", "Roof and shading review", "Electrical service considerations", "Monitoring and battery-readiness where appropriate"] },
+      { title: "Built for Alberta conditions", text: "Cold temperatures can support panel efficiency, while snow cover and shorter winter days affect seasonal production. Your design should be judged on realistic annual modelling, not a perfect summer day." },
+      { title: "From assessment to activation", text: "We keep design, permitting, utility coordination, installation and commissioning connected in one clear process." },
+    ], faq: residentialFaqs,
+  },
+  {
+    slug: "commercial-solar",
+    title: "Commercial Solar With a Business Case",
+    description: "Commercial solar planning for Calgary and Alberta businesses, including rooftops, daytime loads, site constraints and capital planning.",
+    intro: "Turn suitable roof or land area into a long-term energy asset with a system shaped around operating loads and business priorities.",
+    sections: [
+      { title: "Plan around operations", text: "Warehouses, offices, retail, industrial buildings and multi-building sites each require a different load and site review.", bullets: ["Interval and annual usage analysis", "Flat, pitched and ground-mount options", "Construction and disruption planning", "Monitoring and portfolio reporting"] },
+      { title: "Evaluate the complete project", text: "A credible proposal considers capital timing, electrical capacity, roof lifecycle, sustainability objectives and current program eligibility—not panels alone." },
+      { title: "General financial information", text: "Incentive and tax information on this site is educational. Confirm decisions with qualified financial, tax and legal professionals.", note: "Financial outcomes vary by property, usage, tariff, equipment, financing and eligibility." },
+    ], faq: commercialFaqs,
+  },
+  {
+    slug: "agricultural-solar",
+    title: "Farm Solar Installation in Alberta",
+    description: "Explore solar for Alberta farms, barns, workshops, irrigation, grain handling, greenhouses and rural ground-mounted systems.",
+    intro: "Agricultural solar works best when the design reflects the farm’s seasonal loads, working buildings and long-term expansion plans.",
+    sections: [
+      { title: "Designed for the way your farm uses power", text: "We examine historical consumption and when major equipment runs, then compare rooftop and ground-mount opportunities.", bullets: ["Barns and workshops", "Irrigation and pumping", "Grain handling and ventilation", "Refrigeration, cold storage and greenhouses"] },
+      { title: "Rural sites need practical planning", text: "Service capacity, utility requirements, equipment schedules, available land, roof condition and future expansion all influence a responsible system design." },
+      { title: "Programs must be current", text: "Agricultural incentives and financing can open, close or change. Eligibility is confirmed during assessment; no program or bill reduction is guaranteed.", note: "A site-specific review is required before making an investment decision." },
+    ], faq: agriculturalFaqs,
+  },
+  {
+    slug: "solar-incentives-financing",
+    title: "Solar Incentives & Financing in Alberta",
+    description: "An updateable overview of solar incentives, financing, micro-generation credits and tax considerations for Alberta properties.",
+    intro: "Programs can change quickly. This hub explains the categories worth reviewing without presenting unverified offers as permanent facts.",
+    sections: [
+      { title: "Calgary and municipal options", text: "Property-based clean-energy financing or municipal programs may be available from time to time. Confirm the official program status and property eligibility before relying on it." },
+      { title: "Alberta and micro-generation", text: "Export credit structures, retailer terms and interconnection requirements vary. Your utility and retailer documentation are the source of truth for a specific property." },
+      { title: "Federal, commercial and agricultural considerations", text: "Clean-technology tax measures, business tax treatment and agricultural programs may apply in some circumstances. Professional tax and financial advice is essential." },
+      { title: "Financing", text: "Compare term, interest cost, security, early repayment rules and total cost—not only the monthly payment.", note: "Last reviewed: July 21, 2026. Program details require official-source verification before publication." },
+    ], faq: incentivesFaqs,
+  },
+  {
+    slug: "about",
+    title: "Practical Solar Advice. Alberta Perspective.",
+    description: "Learn about Sun Direct Renewable’s approach to thoughtful solar design for Alberta homes, businesses and farms.",
+    intro: "Sun Direct Renewable helps property owners make informed, long-term energy decisions with clear planning and honest expectations.",
+    sections: [
+      { title: "Who we are", text: "We are building an Alberta-focused solar company around practical design, careful communication and respect for the people and properties we serve." },
+      { title: "Our approach", text: "We begin with the energy profile and the site. Recommendations should be understandable, assumptions should be visible and questions should be welcomed.", bullets: ["Honesty", "Quality", "Accountability", "Practical solutions", "Long-term support", "Respect for Alberta communities"] },
+      { title: "Team, safety and credentials", text: "Client-supplied team biographies, licences, insurance details, certifications and safety information will appear here after verification.", note: "Launch requirement: verified company history, team and credential details have not yet been supplied." },
+    ],
+  },
+  {
+    slug: "how-solar-works",
+    title: "How a Grid-Connected Solar System Works",
+    description: "Understand solar panels, inverters, monitoring, micro-generation and the solar installation process in plain language.",
+    intro: "Solar panels convert daylight into electricity for your property. An inverter makes that energy usable, while monitoring helps you understand performance.",
+    sections: [
+      { title: "From sunlight to usable power", text: "Panels produce direct-current electricity. An inverter converts it to alternating current for your home, business or farm." },
+      { title: "Use, export and monitor", text: "Your property uses solar electricity as it is produced. Depending on approvals and arrangements, surplus may flow to the grid and appear as a credit." },
+      { title: "Design matters", text: "Orientation, shading, weather, equipment, losses and actual electricity use all affect the annual result. A professional model explains its assumptions." },
+    ], faq: howSolarWorksFaqs,
+  },
+  {
+    slug: "service-areas",
+    title: "Solar Service Across Calgary & Surrounding Alberta Communities",
+    description: "Sun Direct Renewable serves Calgary and evaluates residential, commercial, farm and rural solar projects in surrounding Alberta communities.",
+    intro: "Our primary market is Calgary, with surrounding communities considered based on project type and location.",
+    sections: [
+      { title: "Calgary", text: "We plan residential and commercial projects around local property conditions, permitting, electrical requirements and utility processes." },
+      { title: "Surrounding communities", text: "Projects outside Calgary are reviewed individually based on property type, location and project scope.", note: "Service coverage is confirmed after Sun Direct Renewable reviews the project address." },
+      { title: "Rural and agricultural projects", text: "Larger farm and rural opportunities elsewhere in Alberta may be assessed individually. Share the site location and energy profile to begin." },
+    ],
+  },
+  {
+    slug: "solar-panels-calgary",
+    title: "Solar Panel Installation in Calgary",
+    description: "Explore solar panel installation in Calgary for homes, businesses and nearby farms with realistic system planning and local support.",
+    intro: "Calgary’s bright climate creates meaningful solar potential, but the right system still depends on the property, electrical use and local approval process.",
+    sections: [
+      { title: "Solar for Calgary properties", text: "Homes, commercial buildings and rural properties near Calgary each bring different roof, land, usage and interconnection considerations." },
+      { title: "Local process, clearly managed", text: "A complete project can include energy review, site assessment, design, permits, interconnection steps, installation, commissioning and monitoring." },
+      { title: "Winter and micro-generation", text: "Cold sunny weather can support panel performance, while annual modelling accounts for shorter days, weather and snow. Export arrangements should be confirmed for your account." },
+    ], faq: commonFaqs,
+  },
+  {
+    slug: "faq",
+    title: "Solar Questions, Answered Clearly",
+    description: "Answers to common Calgary and Alberta solar questions about winter, roof space, farms, micro-generation, timelines and incentives.",
+    intro: "Straightforward answers are the starting point. Your property assessment provides the project-specific detail.",
+    sections: [{ title: "What to expect", text: "Solar decisions should be based on real electricity use, site conditions and current program information. We qualify broad guidance wherever the answer varies." }],
+    faq: commonFaqs,
+  },
+  {
+    slug: "privacy-policy",
+    title: "Privacy Policy",
+    description: "How Sun Direct Renewable intends to collect, use and protect information submitted through this website.",
+    intro: "This draft policy must be reviewed with the client’s actual systems, vendors and privacy contact before launch.",
+    sections: [
+      { title: "Information we collect", text: "Assessment forms may collect contact details, property information, electricity-use information and documents you choose to upload." },
+      { title: "How information is used", text: "Information is intended to respond to requests, evaluate project fit, prepare proposals and maintain appropriate business records. Marketing messages require appropriate consent." },
+      { title: "Documents and service providers", text: "Electricity bills must be handled through a configured secure form or CRM provider and must not be exposed publicly. Retention and vendor details must be finalized before launch." },
+      { title: "Contact and choices", text: "A verified privacy contact email and process for access, correction and deletion requests must be added before publication.", note: "This template is general information, not legal advice." },
+    ],
+  },
+  {
+    slug: "terms",
+    title: "Terms & Conditions",
+    description: "General website terms for Sun Direct Renewable.",
+    intro: "These draft website terms require legal review and verified company contact details before launch.",
+    sections: [
+      { title: "Educational information", text: "Website content is general and does not replace a site assessment, contract, engineering advice, utility confirmation, or financial and tax advice." },
+      { title: "No guaranteed outcome", text: "Solar production, costs, savings, incentives and payback vary. Illustrations and preliminary discussions are not guarantees." },
+      { title: "Intellectual property and links", text: "Site content may not be reused without permission. External links are provided for convenience and do not imply control or endorsement." },
+    ],
+  },
+  {
+    slug: "accessibility",
+    title: "Accessibility",
+    description: "Sun Direct Renewable’s commitment to an accessible and usable website experience.",
+    intro: "We aim to make this website usable for as many people as possible and to follow WCAG 2.2 AA principles.",
+    sections: [
+      { title: "Our approach", text: "The site uses semantic structure, keyboard-accessible controls, visible focus states, reduced-motion support, labelled forms and high-contrast text." },
+      { title: "Need another format?", text: "A verified accessibility contact method will be added before launch. Tell us what page or information you need and the format that works best for you." },
+    ],
+  },
+];
+
+export type BlogPost = {
+  slug: string;
+  title: string;
+  category: string;
+  excerpt: string;
+  read: string;
+};
+
+export const blogPosts: BlogPost[] = [];
+
+export const blogCategories = [
+  { title: "Solar Education", description: "Straightforward guidance about solar equipment, production and system design." },
+  { title: "Residential Solar", description: "Planning considerations for household usage, rooftops and future energy needs." },
+  { title: "Commercial Solar", description: "Practical information for organizations evaluating solar as a long-term asset." },
+  { title: "Agricultural Solar", description: "Solar planning for farms, rural properties, working buildings and ground mounts." },
+  { title: "Alberta Programs", description: "Carefully reviewed information about approvals, incentives and financing." },
+  { title: "Project Planning", description: "What to expect from initial usage review through installation and activation." },
+] as const;

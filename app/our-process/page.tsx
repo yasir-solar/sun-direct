@@ -1,0 +1,28 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import { Breadcrumbs, CTA, Disclaimer, FinalCTA, SectionHeading } from "@/components/Primitives";
+import { Icon } from "@/components/Icons";
+import { processSteps } from "@/data/process";
+import { SavingsReport } from "@/components/SavingsReport";
+
+export const metadata: Metadata = { title: "Our Solar Process", description: "Follow Sun Direct Renewable’s eight-step customer process from a property-specific proposal and savings report through permits, installation and system activation.", alternates: { canonical: "/our-process" } };
+
+const detail = [
+  ["Your recent electricity bills, property address and energy goals.","We review usage patterns and organize the information needed to discuss system fit.","A proposal direction with clearly identified inputs and open questions."],
+  ["Any known future loads, operating schedules or major property changes.","We explain estimated production, bill offset and the assumptions behind the analysis.","A readable savings report that separates estimates from guarantees."],
+  ["Requested identification or finance information only through the approved secure process.","We guide the applicable project, utility and financing approval workflow.","A clear list of decisions, conditions and next actions."],
+  ["Accurate property and account information for the required forms.","We organize project documentation and keep required information connected.","A documented project file ready for the next technical step."],
+  ["Safe site access and relevant roof, building or electrical history.","We review roof, electrical, shading, access and installation conditions.","Confirmed site observations that inform the final design."],
+  ["Timely review of design questions when choices affect the property.","We prepare technical drawings and coordinate required permit documentation.","An approved design package, subject to authority requirements."],
+  ["Site access and coordination around the agreed installation schedule.","We install the system according to the approved design and site plan.","A completed installation ready for required inspection and commissioning."],
+  ["Access for final checks and the monitoring setup process.","We support final approval, commissioning and monitoring configuration.","An activated system and a clear view of how to monitor it."],
+] as const;
+
+export default function OurProcessPage(){return <>
+  <section className="page-hero process-page-hero"><div className="container"><p className="kicker light">The customer journey</p><h1>Eight Clear Steps From Proposal to Power</h1><p>Every solar project has moving parts. Our process keeps the energy analysis, property, documentation and approvals connected.</p></div></section><Breadcrumbs current="Our Solar Process"/>
+  <section className="section"><div className="container"><SectionHeading kicker="How the journey works" title="Know what happens, who handles it and what you receive." text="The exact timing varies, but the structure below makes responsibilities and outputs easier to understand."/><div className="process-detail-list">{processSteps.map(([title,description,icon],index)=><article id={`step-${index+1}`} key={title}><div className="detail-number">{String(index+1).padStart(2,"0")}</div><div className="detail-icon"><Icon name={icon}/></div><div className="detail-main"><p className="kicker">Step {index+1}</p><h2>{title}</h2><p>{description}</p><div className="detail-grid"><div><h3>What you provide</h3><p>{detail[index][0]}</p></div><div><h3>What we handle</h3><p>{detail[index][1]}</p></div><div><h3>What you receive</h3><p>{detail[index][2]}</p></div></div></div></article>)}</div><Disclaimer>Property conditions, financing, utility review, permit processing, equipment availability and inspection schedules can affect the sequence and timing.</Disclaimer></div></section>
+  <section className="section process-visual-break"><div className="container feature-split"><div className="feature-media"><Image src="/media/installations/installer-at-work.webp" alt="Installer working beside mounted solar panels on a residential roof" fill sizes="(max-width:760px) 100vw, 50vw"/></div><div><SectionHeading kicker="Installation with context" title="The approved design stays connected to the real site." text="Survey findings, roof conditions, electrical equipment and access planning all inform how the installation moves from paper to property."/><CTA href="/projects">See Installation Work</CTA></div></div></section>
+  <div id="savings-report"><SavingsReport/></div>
+  <section className="section section-soft"><div className="container"><SectionHeading kicker="Process questions" title="What can affect the project timeline?" align="center"/><div className="content-sections"><article className="content-card"><h2>Approvals and permits</h2><p>Utility, permit and inspection timelines are controlled by the applicable organizations and can vary by property and season.</p></article><article className="content-card"><h2>Property conditions</h2><p>Roof work, electrical upgrades, structural questions, access constraints or design revisions can affect sequencing.</p></article><article className="content-card"><h2>Customer decisions</h2><p>Equipment choices, financing, documentation and timely approvals can influence how quickly a project advances.</p></article><article className="content-card"><h2>Weather and scheduling</h2><p>Safe installation conditions and coordinated site access remain important throughout construction and activation.</p></article></div></div></section>
+  <FinalCTA/>
+  </>}
