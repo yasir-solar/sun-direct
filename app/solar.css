@@ -318,3 +318,106 @@ html{scroll-behavior:smooth;scroll-padding-top:118px}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
 }
+
+/* Aligned brand lockup */
+.logo{min-width:max-content;gap:11px;line-height:1}
+.logo-image{flex:0 0 50px;width:50px;height:50px;display:grid;place-items:center}
+.logo-image img{display:block;width:100%;height:100%;object-fit:contain}
+.logo-type{display:grid;align-content:center;gap:3px}
+.logo-type strong{color:var(--navy);font-size:18px;line-height:1;letter-spacing:-.035em}
+.logo-type b{margin:0;font-size:10px;line-height:1;letter-spacing:.2em}
+.footer .logo-image{flex-basis:46px;width:46px;height:46px}
+.footer .logo-type strong{color:#fff}
+.footer .logo-type b{color:var(--sunlight)}
+
+/* Flexible solar payment options */
+.payment-section{position:relative;isolation:isolate;overflow:hidden;padding:clamp(82px,8vw,112px) 0;background:linear-gradient(180deg,#fffdf5 0%,#fff8d8 52%,#fffdf5 100%)}
+.payment-section:before{content:"";position:absolute;z-index:-2;width:680px;height:680px;left:50%;top:-410px;translate:-50% 0;border-radius:50%;background:radial-gradient(circle,rgba(255,216,77,.55) 0%,rgba(248,196,0,.13) 42%,transparent 70%)}
+.payment-glow{position:absolute;z-index:-1;width:520px;height:520px;left:50%;top:-295px;translate:-50% 0;border-radius:50%;background:repeating-conic-gradient(from -8deg,rgba(248,196,0,.08) 0 4deg,transparent 5deg 18deg);animation:payment-rays 26s linear infinite}
+.payment-shell{position:relative}
+.payment-heading{max-width:760px;margin:0 auto 50px;text-align:center}
+.payment-heading h2{margin:0;color:var(--navy);font-size:clamp(39px,4.6vw,64px);line-height:1.04;letter-spacing:-.05em;text-wrap:balance}
+.payment-heading p{max-width:620px;margin:17px auto 0;color:var(--muted);font-size:18px;line-height:1.65}
+.payment-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;align-items:stretch}
+.payment-card{position:relative;min-width:0;min-height:610px;display:flex;flex-direction:column;padding:34px;border:1px solid rgba(7,20,38,.1);border-radius:22px;background:rgba(255,255,255,.96);box-shadow:0 18px 48px rgba(7,20,38,.08);transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.payment-card:hover{transform:translateY(-7px);border-color:rgba(233,166,0,.48);box-shadow:0 27px 62px rgba(7,20,38,.13),0 0 0 4px rgba(248,196,0,.07)}
+.payment-card.is-popular{border:2px solid var(--yellow);box-shadow:0 24px 60px rgba(7,20,38,.13),0 0 0 6px rgba(248,196,0,.08)}
+.popular-badge{position:absolute;top:0;left:50%;translate:-50% -50%;min-width:118px;padding:8px 15px;border-radius:999px;background:var(--navy);color:#fff;text-align:center;font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;box-shadow:0 9px 24px rgba(7,20,38,.2)}
+.payment-icon{width:54px;height:54px;display:grid;place-items:center;margin-bottom:26px;border-radius:16px;background:var(--soft-yellow);color:#8b6c00}
+.payment-icon svg{width:27px}
+.payment-card.is-popular .payment-icon{background:var(--yellow);color:var(--navy)}
+.payment-card-copy{min-height:142px}
+.payment-card h3{margin:0 0 12px;color:var(--navy);font-size:27px;line-height:1.15;letter-spacing:-.04em}
+.payment-card-copy p{margin:0;color:var(--muted);font-size:14px;line-height:1.7}
+.payment-label{display:flex;align-items:center;min-height:52px;margin:2px 0 22px;padding:12px 15px;border-radius:11px;background:#f5f7f4;color:var(--navy);font-size:13px;line-height:1.35}
+.payment-card.is-popular .payment-label{background:var(--soft-yellow)}
+.payment-card ul{display:grid;gap:13px;margin:0 0 30px;padding:0;list-style:none}
+.payment-card li{display:flex;align-items:flex-start;gap:10px;color:#3f4a54;font-size:13px;line-height:1.5}
+.payment-card li svg{flex:0 0 18px;width:18px;margin-top:1px;color:var(--renewable);stroke-width:2.4}
+.payment-card .button{width:min(100%,260px);min-height:52px;margin:auto auto 0;align-self:center;padding-inline:18px;text-align:center}
+.payment-note{max-width:1000px;display:flex;align-items:flex-start;justify-content:center;gap:11px;margin:30px auto 0;color:#58616b;text-align:center;font-size:11px;line-height:1.65}
+.payment-note svg{flex:0 0 18px;width:18px;margin-top:1px;color:var(--renewable)}
+
+/* Partner network */
+.partner-section{position:relative;padding:58px 0;background:#fff;border-block:1px solid var(--soft-border)}
+.partner-layout{display:grid;grid-template-columns:minmax(280px,.82fr) minmax(0,1.18fr);gap:50px;align-items:center}
+.partner-intro{display:grid;grid-template-columns:48px 1fr;gap:18px;align-items:start}
+.partner-icon{width:48px;height:48px;display:grid;place-items:center;border-radius:14px;background:var(--navy);color:var(--yellow)}
+.partner-icon svg{width:24px}
+.partner-intro h2{margin:0 0 9px;color:var(--navy);font-size:clamp(27px,2.7vw,38px);line-height:1.1;letter-spacing:-.045em}
+.partner-intro p{margin:0;color:var(--muted);font-size:13px;line-height:1.65}
+.partner-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.partner-card{min-width:0;min-height:150px;display:grid;grid-template-columns:130px minmax(0,1fr) 22px;gap:18px;align-items:center;padding:20px;border:1px solid var(--soft-border);border-radius:17px;background:#fafbf8;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease,background .22s ease}
+.partner-card:hover,.partner-card:focus-visible{transform:translateY(-4px);border-color:rgba(233,166,0,.5);background:#fff;box-shadow:0 18px 42px rgba(7,20,38,.09)}
+.partner-logo{height:85px;display:grid;place-items:center;padding:8px;border-radius:11px;background:#fff}
+.partner-logo img{display:block;width:100%;height:100%;object-fit:contain}
+.partner-logo-club img{max-width:128px}
+.partner-logo-alberta img{max-width:94px}
+.partner-copy{min-width:0;display:grid;gap:5px}
+.partner-copy strong{color:var(--navy);font-size:16px}
+.partner-copy small{color:var(--muted);font-size:10px;line-height:1.5}
+.partner-arrow{width:20px;color:#947200;transition:transform .2s ease}
+.partner-card:hover .partner-arrow{transform:translateX(3px)}
+
+.payment-card .button:focus-visible,.partner-card:focus-visible,.logo:focus-visible{outline:3px solid rgba(248,196,0,.48);outline-offset:4px}
+
+@keyframes payment-rays{to{rotate:360deg}}
+
+@media(max-width:1050px){
+  .payment-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .payment-card:last-child{grid-column:1/-1;width:calc(50% - 11px);justify-self:center}
+  .partner-layout{grid-template-columns:1fr;gap:30px}
+}
+
+@media(max-width:760px){
+  .logo-image{flex-basis:44px;width:44px;height:44px}
+  .logo-type strong{font-size:16px}
+  .logo-type b{font-size:9px}
+  .payment-section{padding:72px 0;overflow:hidden}
+  .payment-heading{margin-bottom:40px}
+  .payment-heading p{font-size:16px}
+  .payment-grid{grid-template-columns:minmax(0,1fr);gap:20px}
+  .payment-card,.payment-card:last-child{grid-column:auto;width:100%;min-height:0;padding:30px 23px;border-radius:18px}
+  .payment-card.is-popular{margin-top:8px}
+  .payment-card-copy{min-height:0;margin-bottom:21px}
+  .payment-label{min-height:0}
+  .payment-card .button{width:100%}
+  .payment-note{text-align:left}
+  .partner-section{padding:48px 0}
+  .partner-intro{grid-template-columns:42px 1fr;gap:14px}
+  .partner-icon{width:42px;height:42px}
+  .partner-list{grid-template-columns:minmax(0,1fr)}
+  .partner-card{grid-template-columns:112px minmax(0,1fr) 20px;min-height:130px;padding:16px;gap:13px}
+  .partner-logo{height:78px;padding:7px}
+  .partner-copy small{font-size:9px}
+}
+
+@media(max-width:430px){
+  .partner-card{grid-template-columns:96px minmax(0,1fr) 18px}
+  .partner-logo{height:68px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .payment-glow{animation:none}
+  .payment-card:hover,.partner-card:hover{transform:none}
+}
