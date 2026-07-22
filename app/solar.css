@@ -474,3 +474,21 @@ main:has(.solar-hero) h6{font-family:var(--font-poppins),Arial,sans-serif;font-w
 }
 
 @media(prefers-reduced-motion:reduce){.rate-card:hover{transform:none}}
+
+/* Unified More menu and enlarged logo */
+.more-dropdown .dropdown-menu{left:auto;right:0;width:390px}
+.more-menu .menu-company-link{background:#f8faf7;color:var(--navy)}
+.more-menu .menu-company-link:first-of-type{border-radius:11px 11px 0 0}
+.more-menu .menu-company-link:nth-of-type(2){margin-bottom:8px;border-radius:0 0 11px 11px}
+
+.nav-shell{height:96px}
+.logo-image{flex-basis:216px;width:216px;height:94px}
+.footer .logo-image{flex-basis:246px;width:246px;height:113px}
+
+@media(max-width:1320px){.mobile-nav{top:96px}}
+@media(max-width:760px){
+  .nav-shell{height:86px}
+  .mobile-nav{top:86px}
+  .logo-image{flex-basis:186px;width:186px;height:80px}
+  .footer .logo-image{flex-basis:222px;width:222px;height:102px}
+}
