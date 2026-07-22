@@ -6,6 +6,7 @@ import { Breadcrumbs, Disclaimer, FinalCTA, SectionHeading } from "@/components/
 import { FAQList } from "@/components/FAQ";
 import { site } from "@/data/site";
 import { ServiceBusinessPage } from "@/components/ServiceBusinessPage";
+import { ServiceAreasPage } from "@/components/ServiceAreasPage";
 
 const pageMedia: Record<string,{src:string;alt:string}> = {
   "residential-solar": { src: "/media/installations/multi-roof-home.webp", alt: "Detached home with solar panels installed across multiple roof levels" },
@@ -17,10 +18,11 @@ const pageMedia: Record<string,{src:string;alt:string}> = {
 };
 
 export function generateStaticParams(){ return pages.map(page=>({slug:page.slug})); }
-export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{const {slug}=await params;const page=pages.find(x=>x.slug===slug);if(!page)return{};return{title:page.title,description:page.description,alternates:{canonical:`/${page.slug}`},openGraph:{title:page.title,description:page.description,url:`/${page.slug}`}}}
+export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{const {slug}=await params;const page=pages.find(x=>x.slug===slug);if(!page)return{};const title=slug==="service-areas"?"Solar Installation Across Alberta | Sun Direct Renewable":page.title;const description=slug==="service-areas"?"Explore residential, commercial and agricultural solar service areas across Calgary, Edmonton, Red Deer, Lethbridge, Medicine Hat and communities throughout Alberta.":page.description;return{title,description,alternates:{canonical:`/${page.slug}`},openGraph:{title,description,url:`/${page.slug}`}}}
 
 export default async function ContentPage({params}:{params:Promise<{slug:string}>}){
   const {slug}=await params; const page=pages.find(x=>x.slug===slug); if(!page)notFound(); const media=pageMedia[slug];
+  if(slug === "service-areas") return <ServiceAreasPage/>;
   const serviceKind = slug === "residential-solar" ? "residential" : slug === "commercial-solar" ? "commercial" : slug === "agricultural-solar" ? "agricultural" : null;
   if(serviceKind) return <ServiceBusinessPage page={page} kind={serviceKind}/>;
   const faqSchema=page.faq?{"@context":"https://schema.org","@type":"FAQPage",mainEntity:page.faq.map(x=>({"@type":"Question",name:x.question,acceptedAnswer:{"@type":"Answer",text:x.answer}}))}:null;

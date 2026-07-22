@@ -130,9 +130,9 @@ export const pages: PageContent[] = [
   },
   {
     slug: "service-areas",
-    title: "Solar Service Across Calgary & Surrounding Alberta Communities",
-    description: "Sun Direct Renewable serves Calgary and evaluates residential, commercial, farm and rural solar projects in surrounding Alberta communities.",
-    intro: "Our primary market is Calgary, with surrounding communities considered based on project type and location.",
+    title: "Solar Installation Across Alberta",
+    description: "Explore residential, commercial and agricultural solar service areas across Calgary, Edmonton, Red Deer, Lethbridge, Medicine Hat and communities throughout Alberta.",
+    intro: "Service availability is confirmed after an address and project review.",
     sections: [
       { title: "Calgary", text: "We plan residential and commercial projects around local property conditions, permitting, electrical requirements and utility processes." },
       { title: "Surrounding communities", text: "Projects outside Calgary are reviewed individually based on property type, location and project scope.", note: "Service coverage is confirmed after Sun Direct Renewable reviews the project address." },

@@ -2,33 +2,33 @@ import { Icon } from "@/components/Icons";
 
 const rates = [
   {
-    title: "Pre-solar rate",
+    title: "Pre-solar electricity rate",
     rate: "5.90",
     detail: "For eligible customers planning a solar installation before their system is live.",
     icon: "sun",
   },
   {
-    title: "Low rate",
+    title: "Standard electricity rate",
     rate: "5.90",
-    detail: "The published one-year rate for sites registered as micro-generators.",
+    detail: "An electricity rate option to review as your solar system moves toward activation.",
     icon: "power",
   },
   {
-    title: "High export rate",
+    title: "Solar export rate",
     rate: "35.00",
-    detail: "A published option for members exporting excess electricity to the grid.",
+    detail: "An export-focused option to discuss when your system can send excess electricity to the grid.",
     icon: "chart",
   },
 ] as const;
 
 export function SolarClubRates() {
-  return <section className="section rate-section" aria-labelledby="solar-club-rates-title">
+  return <section className="section rate-section" aria-labelledby="electricity-rates-title">
     <div className="rate-orbit" aria-hidden="true" />
     <div className="container rate-shell">
       <div className="rate-heading">
-        <p className="kicker light">Solar Club rate snapshot</p>
-        <h2 id="solar-club-rates-title">Understand the rates behind your solar plan.</h2>
-        <p>Solar Club publishes distinct electricity rates for eligible Alberta customers before and after solar activation. These are Solar Club rates—not Sun Direct Renewable rates.</p>
+        <p className="kicker light">Electricity rate options</p>
+        <h2 id="electricity-rates-title">Understand the rates behind your solar plan.</h2>
+        <p>Explore electricity rate options that can support your property before solar activation and when your system is ready to export excess energy.</p>
       </div>
       <div className="rate-grid">
         {rates.map((item) => <article className="rate-card" key={item.title}>
@@ -39,8 +39,8 @@ export function SolarClubRates() {
         </article>)}
       </div>
       <div className="rate-footnote">
-        <p><Icon name="shield" />Rates, eligibility, terms, fees, and switching options are set by Solar Club and may change. Confirm all current details directly with Solar Club before making a decision.</p>
-        <a className="button button-secondary" href="https://solarclub.ca" target="_blank" rel="noopener noreferrer">View current Solar Club rates <Icon name="arrow" /></a>
+        <p><Icon name="shield" />Rates, eligibility, terms, fees, and switching options may change. We will help you review the available options for your property before you make a decision.</p>
+        <a className="button button-secondary" href="/contact">Discuss your rate options <Icon name="arrow" /></a>
       </div>
     </div>
   </section>;
