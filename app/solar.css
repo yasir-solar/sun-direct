@@ -421,3 +421,32 @@ html{scroll-behavior:smooth;scroll-padding-top:118px}
   .payment-glow{animation:none}
   .payment-card:hover,.partner-card:hover{transform:none}
 }
+
+/* Homepage width and typography refinement */
+.container{width:min(1114px,calc(100% - 48px))}
+.wide-container{width:min(1427px,calc(100% - 48px))}
+.nav-shell{width:min(1500px,calc(100% - 40px))}
+.footer .container{width:min(1280px,calc(100% - 48px))}
+
+main:has(.solar-hero) h1,
+main:has(.solar-hero) h2,
+main:has(.solar-hero) h3,
+main:has(.solar-hero) h4,
+main:has(.solar-hero) h5,
+main:has(.solar-hero) h6{font-family:var(--font-poppins),Arial,sans-serif;font-weight:600}
+
+.gallery-home .section-heading.center{max-width:780px;margin-inline:auto;text-align:center}
+
+.logo-image{flex-basis:60px;width:60px;height:60px}
+.logo-type strong{font-size:22px}
+.logo-type b{font-size:12px}
+.footer .logo-image{flex-basis:55px;width:55px;height:55px}
+
+@media(max-width:760px){
+  .container,.wide-container{width:calc(100% - 28px)}
+  .footer .container{width:calc(100% - 28px)}
+  .logo-image{flex-basis:53px;width:53px;height:53px}
+  .logo-type strong{font-size:19px}
+  .logo-type b{font-size:10px}
+  .footer .logo-image{flex-basis:53px;width:53px;height:53px}
+}

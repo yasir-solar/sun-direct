@@ -41,7 +41,7 @@ export function HomepageHero() {
     <div className="hero-inner container">
       <div className="hero-copy">
         <p className="kicker">Calgary · Alberta</p>
-        <h1>Turn Alberta Sunshine Into <span>Long-Term Energy Savings</span></h1>
+        <h1>Turn Alberta Sunshine Into <span>Long-Term Savings</span></h1>
         <p>Custom solar solutions for Calgary homes, businesses and farms, managed from electricity-usage analysis through installation and system activation.</p>
         <div className="hero-actions"><CTA href="/free-solar-assessment">Get Your Solar Proposal</CTA><CTA href="#our-process" secondary>See Our Process</CTA></div>
         <div className="hero-services"><span>Residential</span><span>Commercial</span><span>Agricultural</span></div>
