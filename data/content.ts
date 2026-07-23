@@ -15,6 +15,9 @@ export const commonFaqs = [
   { question: "What if my roof needs to be replaced in a few years?", answer: "Roof age and condition should be reviewed before installation. If replacement is likely soon, it may be more practical to complete the roofing work first rather than pay to remove and reinstall the array later." },
   { question: "What happens when my panels produce more electricity than I am using?", answer: "An approved micro-generation system may export unused electricity to the grid. The credit structure depends on your retailer, utility arrangements and current terms for the property." },
   { question: "What should I have ready before requesting a solar proposal?", answer: "A recent electricity bill, ideally twelve months of usage, the property address and any plans for future loads such as an EV or new equipment give the assessment a stronger starting point." },
+  { question: "Do I need permits or utility approval before solar can be installed?", answer: "Most grid-connected projects involve utility interconnection and may require permits or other approvals. The exact requirements depend on the property, municipality, electrical service and proposed system design." },
+  { question: "How long does a solar project usually take?", answer: "Timing depends on the site review, system design, equipment availability, utility requirements, permits, weather and inspection scheduling. A property-specific proposal can outline the steps and the factors that may affect the timeline." },
+  { question: "How much maintenance do solar panels need?", answer: "Solar systems are generally low maintenance, but monitoring, occasional visual checks and access after severe weather remain important. Your handover should explain the selected equipment, monitoring platform and recommended support process." },
 ];
 
 const residentialFaqs = [
