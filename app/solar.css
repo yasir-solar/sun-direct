@@ -530,3 +530,11 @@ main:has(.solar-hero) h6{font-family:var(--font-poppins),Arial,sans-serif;font-w
 @media(max-width:760px){
   .solar-hero .hero-poster{object-position:85% center}
 }
+
+/* Footer brand lockup */
+.footer-brand .logo{display:inline-flex;margin:0 0 12px}
+.footer .logo-image{position:relative;flex-basis:220px;width:220px;height:92px;padding:9px 14px;border:1px solid rgba(255,216,77,.28);border-radius:15px;background:linear-gradient(135deg,#fffdf5,#eef3ec);box-shadow:0 14px 30px rgba(0,0,0,.18)}
+.footer-brand .location-pill{display:inline-flex;align-items:center;margin:0 0 18px;padding:7px 11px;border:1px solid rgba(255,216,77,.32);border-radius:999px;background:rgba(255,255,255,.05);color:#f5f7f8;font-size:11px;font-weight:700;letter-spacing:.04em}
+.footer-brand .location-pill:before{content:"";width:7px;height:7px;margin-right:8px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 4px rgba(255,216,77,.1)}
+.footer-brand>p{margin-top:0}
+@media(max-width:760px){.footer .logo-image{flex-basis:210px;width:210px;height:88px}.footer-brand .location-pill{margin-bottom:16px}}
