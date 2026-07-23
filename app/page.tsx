@@ -15,7 +15,7 @@ import { SolarPaymentOptions } from "@/components/SolarPaymentOptions";
 import { PartnerNetwork } from "@/components/PartnerNetwork";
 import { SolarClubRates } from "@/components/SolarClubRates";
 
-export const metadata: Metadata = { title: { absolute: "Solar Installation Calgary | Sun Direct Renewable" }, description: site.description, alternates: { canonical: "/" } };
+export const metadata: Metadata = { title: { absolute: "Sun Direct Renewable | Residential & Commercial Solar in Alberta" }, description: "Explore residential, commercial and agricultural solar solutions across Alberta with professional support from proposal to activation.", alternates: { canonical: "/" } };
 
 const services = [
   {title:"Residential Solar",text:"A rooftop system shaped around your household usage, roof and long-term energy goals.",href:"/residential-solar",image:"/media/installations/multi-roof-home.webp",label:"Explore Residential"},
