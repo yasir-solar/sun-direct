@@ -7,6 +7,8 @@ import { FAQList } from "@/components/FAQ";
 import { site } from "@/data/site";
 import { ServiceBusinessPage } from "@/components/ServiceBusinessPage";
 import { ServiceAreasPage } from "@/components/ServiceAreasPage";
+import { SolarIncentivesPage } from "@/components/SolarIncentivesPage";
+import { SolarFaqPage } from "@/components/SolarFaqPage";
 
 const pageMedia: Record<string,{src:string;alt:string}> = {
   "residential-solar": { src: "/media/installations/multi-roof-home.webp", alt: "Detached home with solar panels installed across multiple roof levels" },
@@ -18,11 +20,13 @@ const pageMedia: Record<string,{src:string;alt:string}> = {
 };
 
 export function generateStaticParams(){ return pages.map(page=>({slug:page.slug})); }
-export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{const {slug}=await params;const page=pages.find(x=>x.slug===slug);if(!page)return{};const title=slug==="service-areas"?"Solar Installation Across Alberta | Sun Direct Renewable":page.title;const description=slug==="service-areas"?"Explore residential, commercial and agricultural solar service areas across Calgary, Edmonton, Red Deer, Lethbridge, Medicine Hat and communities throughout Alberta.":page.description;return{title,description,alternates:{canonical:`/${page.slug}`},openGraph:{title,description,url:`/${page.slug}`}}}
+export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{const {slug}=await params;const page=pages.find(x=>x.slug===slug);if(!page)return{};const title=slug==="service-areas"?"Solar Installation Across Alberta | Sun Direct Renewable":slug==="solar-incentives-financing"?"Solar Incentives and Financing in Alberta | Sun Direct Renewable":slug==="faq"?"Solar FAQs Alberta | Sun Direct Renewable":page.title;const description=slug==="service-areas"?"Explore residential, commercial and agricultural solar service areas across Calgary, Edmonton, Red Deer, Lethbridge, Medicine Hat and communities throughout Alberta.":slug==="solar-incentives-financing"?"Explore current Alberta solar incentives, Calgary CEIP financing, micro-generation credits and business tax options for homes, businesses and farms.":slug==="faq"?"Get clear answers about solar costs, savings, Alberta winters, micro-generation, permits, installation, financing, commercial systems, and farm solar.":page.description;const isFullTitle=slug==="service-areas"||slug==="solar-incentives-financing"||slug==="faq";return{title:isFullTitle?{absolute:title}:title,description,alternates:{canonical:`/${page.slug}`},openGraph:{title,description,url:`/${page.slug}`}}}
 
 export default async function ContentPage({params}:{params:Promise<{slug:string}>}){
   const {slug}=await params; const page=pages.find(x=>x.slug===slug); if(!page)notFound(); const media=pageMedia[slug];
   if(slug === "service-areas") return <ServiceAreasPage/>;
+  if(slug === "solar-incentives-financing") return <SolarIncentivesPage/>;
+  if(slug === "faq") return <SolarFaqPage/>;
   const serviceKind = slug === "residential-solar" ? "residential" : slug === "commercial-solar" ? "commercial" : slug === "agricultural-solar" ? "agricultural" : null;
   if(serviceKind) return <ServiceBusinessPage page={page} kind={serviceKind}/>;
   const faqSchema=page.faq?{"@context":"https://schema.org","@type":"FAQPage",mainEntity:page.faq.map(x=>({"@type":"Question",name:x.question,acceptedAnswer:{"@type":"Answer",text:x.answer}}))}:null;

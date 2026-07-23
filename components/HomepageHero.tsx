@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { CTA } from "@/components/Primitives";
+import { TypingHeroWord } from "@/components/TypingHeroWord";
 
 const heroImage = "/media/sun-direct-luxury-hero.webp";
 
@@ -41,12 +42,11 @@ export function HomepageHero() {
     <div className="hero-inner container">
       <div className="hero-copy">
         <p className="kicker">Calgary · Alberta</p>
-        <h1 aria-label="Turn Alberta Sunshine Into Savings, Independence, or Value">
-          <span className="hero-title-prefix" aria-hidden="true">Turn Alberta Sunshine Into</span>
-          <span className="hero-word-rotator" aria-hidden="true">
-            <span>Savings</span>
-            <span>Independence</span>
-            <span>Value</span>
+        <h1>
+          <span className="sr-only">Turn Alberta Sunshine Into Savings, Independence, and Value.</span>
+          <span className="hero-heading-visual" aria-hidden="true">
+            <span className="hero-title-prefix">Turn Alberta Sunshine Into</span>
+            <TypingHeroWord />
           </span>
         </h1>
         <p>Custom solar solutions for Calgary homes, businesses and farms, managed from electricity-usage analysis through installation and system activation.</p>

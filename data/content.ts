@@ -96,8 +96,8 @@ export const pages: PageContent[] = [
   },
   {
     slug: "solar-incentives-financing",
-    title: "Solar Incentives & Financing in Alberta",
-    description: "An updateable overview of solar incentives, financing, micro-generation credits and tax considerations for Alberta properties.",
+    title: "Solar Incentives and Financing in Alberta",
+    description: "Explore current Alberta solar incentives, Calgary CEIP financing, micro-generation credits and business tax options for homes, businesses and farms.",
     intro: "Programs can change quickly. This hub explains the categories worth reviewing without presenting unverified offers as permanent facts.",
     sections: [
       { title: "Calgary and municipal options", text: "Property-based clean-energy financing or municipal programs may be available from time to time. Confirm the official program status and property eligibility before relying on it." },
@@ -152,8 +152,8 @@ export const pages: PageContent[] = [
   },
   {
     slug: "faq",
-    title: "Solar Questions, Answered Clearly",
-    description: "Answers to common Calgary and Alberta solar questions about winter, roof space, farms, micro-generation, timelines and incentives.",
+    title: "Solar Frequently Asked Questions",
+    description: "Get clear answers about solar costs, savings, Alberta winters, micro-generation, permits, installation, financing, commercial systems, and farm solar.",
     intro: "Straightforward answers are the starting point. Your property assessment provides the project-specific detail.",
     sections: [{ title: "What to expect", text: "Solar decisions should be based on real electricity use, site conditions and current program information. We qualify broad guidance wherever the answer varies." }],
     faq: commonFaqs,
