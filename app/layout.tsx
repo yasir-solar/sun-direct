@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" }, robots: { index: true, follow: true },
   openGraph: { type: "website", locale: "en_CA", siteName: site.name, title: site.title, description: site.description, images: [{ url: "/media/sun-direct-luxury-hero.webp", width: 1672, height: 941, alt: "Luxury Alberta home with rooftop solar panels illuminated by golden evening sunlight" }] },
   twitter: { card: "summary_large_image", title: site.title, description: site.description, images: ["/media/sun-direct-luxury-hero.webp"] },
-  manifest: "/site.webmanifest", icons: { icon: "/favicon.svg" },
+  manifest: "/site.webmanifest", icons: { icon: [{ url: "/favicon.png", type: "image/png", sizes: "512x512" }] },
 };
 export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#123d2b" };
 
