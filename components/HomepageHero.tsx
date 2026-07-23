@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { CTA } from "@/components/Primitives";
 import { TypingWord } from "@/components/TypingWord";
 
@@ -6,7 +5,10 @@ const heroImage = "/media/sun-direct-luxury-hero.webp";
 
 export function HomepageHero() {
   return <section className="hero solar-hero">
-    <Image className="hero-poster" src={heroImage} alt="Luxury Alberta home with rooftop solar panels illuminated by golden evening sunlight" fill priority sizes="100vw"/>
+    <picture>
+      <source media="(max-width: 767px)" srcSet="/media/sun-direct-luxury-hero-768.webp" type="image/webp" />
+      <img className="hero-poster" src={heroImage} alt="Luxury Alberta home with rooftop solar panels illuminated by golden evening sunlight" width={1672} height={941} loading="eager" decoding="async" fetchPriority="high" />
+    </picture>
     <div className="hero-atmosphere" aria-hidden="true"/>
     <div className="hero-rays" aria-hidden="true"/>
     <div className="hero-shine" aria-hidden="true"/>
