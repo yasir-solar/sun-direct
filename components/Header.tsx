@@ -57,7 +57,6 @@ export function Header() {
 
   return <>
     <a className="skip-link" href="#main">Skip to main content</a>
-    <div className="announcement"><span className="announcement-sun" aria-hidden="true"/>Solar proposals designed around Alberta properties and real electricity use.</div>
     <header className={`site-header ${scrolled ? "is-scrolled" : ""}`}>
       <div className="nav-shell">
         <Logo/>

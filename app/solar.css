@@ -483,7 +483,6 @@ main:has(.solar-hero) h6{font-family:var(--font-poppins),Arial,sans-serif;font-w
 .more-menu .menu-company-link:first-of-type{border-radius:11px 11px 0 0}
 .more-menu .menu-company-link:nth-of-type(2){margin-bottom:8px;border-radius:0 0 11px 11px}
 
-.announcement{height:32px}
 .nav-shell{height:78px;align-items:center}
 .logo{display:flex;align-items:center}
 .logo-image{flex-basis:190px;width:190px;height:76px}
@@ -494,10 +493,11 @@ main:has(.solar-hero) h6{font-family:var(--font-poppins),Arial,sans-serif;font-w
 
 @media(max-width:1320px){.mobile-nav{top:78px}}
 @media(max-width:760px){
-  .announcement{min-height:32px}
   .nav-shell{height:72px}
   .mobile-nav{top:72px}
   .logo-image{flex-basis:172px;width:172px;height:70px}
+  .menu-button{width:46px;height:46px;margin-left:auto;flex:0 0 46px;place-items:center;padding:0;gap:5px;border-radius:12px}
+  .menu-button span{width:21px}
   .footer .logo-image{flex-basis:222px;width:222px;height:102px}
 }
 
