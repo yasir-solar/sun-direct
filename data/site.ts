@@ -1,7 +1,7 @@
 export const site = {
   name: "Sun Direct Renewable",
   shortName: "Sun Direct",
-  url: "https://sundirectrenewable.ca",
+  url: "https://sundirect.ca",
   title: "Solar Installation Calgary | Sun Direct Renewable",
   description: "Custom solar solutions for Calgary homes, businesses and farms. Sun Direct Renewable manages proposals, savings analysis, approvals, permits, installation and system activation.",
   location: "Calgary, Alberta",

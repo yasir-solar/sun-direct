@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Breadcrumbs } from "@/components/Primitives";
+import { BreadcrumbSchema, Breadcrumbs } from "@/components/Primitives";
 import { QuoteForm } from "@/components/QuoteForm";
 
 export const metadata: Metadata = {
   title: "Contact",
   description: "Contact Sun Direct Renewable about solar for a Calgary or Alberta home, business, farm or rural property.",
-  alternates: { canonical: "/contact" },
+  alternates: { canonical: "/contact/" },
 };
 
 export default function Contact() {
@@ -17,6 +17,7 @@ export default function Contact() {
         <p>Share your electricity use, property type and goals. We&apos;ll organize the information needed to discuss the next step.</p>
       </div>
     </section>
+    <BreadcrumbSchema current="Contact" path="/contact/"/>
     <Breadcrumbs current="Contact"/>
     <section className="section section-soft">
       <div className="container quote-panel">

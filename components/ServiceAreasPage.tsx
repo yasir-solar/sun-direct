@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { CTA } from "@/components/Primitives";
+import { BreadcrumbSchema, CTA } from "@/components/Primitives";
 import { Icon } from "@/components/Icons";
 import { site } from "@/data/site";
 
@@ -48,6 +48,7 @@ export function ServiceAreasPage() {
         <div className="areas-hero-proof"><span><Icon name="home" />Residential</span><span><Icon name="building" />Commercial</span><span><Icon name="leaf" />Agricultural</span></div>
       </div>
     </section>
+    <BreadcrumbSchema current="Solar Installation Across Alberta" path="/service-areas/" />
 
     <section className="section areas-cities" aria-labelledby="service-cities-title">
       <div className="container">

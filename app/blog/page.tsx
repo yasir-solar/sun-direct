@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { blogCategories } from "@/data/content";
-import { Breadcrumbs, FinalCTA, SectionHeading } from "@/components/Primitives";
+import { BreadcrumbSchema, Breadcrumbs, FinalCTA, SectionHeading } from "@/components/Primitives";
 import { Icon } from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: "Solar Learning Centre",
   description: "Practical guidance about residential, commercial and agricultural solar in Calgary and Alberta.",
-  alternates: { canonical: "/blog" },
+  alternates: { canonical: "/blog/" },
 };
 
 export default function Blog() {
@@ -18,7 +18,7 @@ export default function Blog() {
         <p>Practical Alberta solar guidance will be published here after each guide has been carefully reviewed.</p>
       </div>
     </section>
-    <Breadcrumbs current="Solar Learning Centre"/>
+    <BreadcrumbSchema current="Solar Learning Centre" path="/blog/"/><Breadcrumbs current="Solar Learning Centre"/>
     <section className="section blog-categories-section">
       <div className="container">
         <SectionHeading title="Learning centre categories" text="The article library is being prepared. These categories will stay in place while the first guides are reviewed for publication."/>

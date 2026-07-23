@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { FAQExplorer } from "@/components/FAQExplorer";
 import { Icon } from "@/components/Icons";
-import { Breadcrumbs, CTA } from "@/components/Primitives";
+import { BreadcrumbSchema, Breadcrumbs, CTA } from "@/components/Primitives";
 import { solarFaqCategories, solarFaqs } from "@/data/solarFaqs";
 import { site } from "@/data/site";
 
@@ -17,7 +17,7 @@ export function SolarFaqPage() {
   const pageSchema = { "@context": "https://schema.org", "@type": "WebPage", name: "Solar FAQs Alberta", description: "Get clear answers about solar costs, savings, Alberta winters, micro-generation, permits, installation, financing, commercial systems, and farm solar.", url: `${site.url}/faq/` };
   return <>
     <section className="faq-page-hero"><Image src="/media/installations/roof-array-close.webp" alt="Solar panels installed on an Alberta rooftop" fill priority sizes="100vw" /><div className="faq-hero-rays" aria-hidden="true" /><div className="container faq-page-hero-inner"><p className="service-label">Sun Direct Renewable · Alberta</p><h1>Solar Frequently Asked Questions</h1><p>Clear answers about solar costs, savings, Alberta winters, approvals, installation, financing, farms, and system performance.</p><div className="faq-page-hero-actions"><CTA href="/free-solar-assessment">Get Your Solar Assessment</CTA><CTA href="#questions" secondary>Explore the Questions</CTA></div></div></section>
-    <Breadcrumbs current="Solar Frequently Asked Questions" />
+    <BreadcrumbSchema current="Solar Frequently Asked Questions" path="/faq/" /><Breadcrumbs current="Solar Frequently Asked Questions" />
     <section className="section faq-page-intro"><div className="container"><div className="faq-page-heading"><p className="kicker">Answers built around Alberta solar planning</p><h2>Start with the question that matters to your property.</h2><p>These answers explain the practical issues that shape a solar project. Your final system, timing and financial options still need a review of your property, electricity usage and current requirements.</p></div><div className="faq-topic-cards"><a href="#questions"><Icon name="home" /><strong>Homes & rooftops</strong><span>Suitability, sizing and roof planning</span></a><a href="#questions"><Icon name="chart" /><strong>Costs & bills</strong><span>Pricing, savings and electricity charges</span></a><a href="#questions"><Icon name="sun" /><strong>Alberta conditions</strong><span>Winter, snow and weather considerations</span></a><a href="#questions"><Icon name="building" /><strong>Businesses & farms</strong><span>Commercial and agricultural planning</span></a></div></div></section>
     <section className="faq-page-resource-strip"><div className="container"><div><Icon name="shield" /><p><strong>Planning note:</strong> Alberta micro-generation, municipal permitting, retailer credit terms and incentives can change. Confirm the current rules before relying on them for a project decision.</p></div><a href="/solar-incentives-financing">Explore incentives & financing <Icon name="arrow" /></a></div></section>
     <section className="section faq-page-questions" id="questions"><div className="container"><div className="faq-page-heading centered"><p className="kicker">Search or browse</p><h2>Clear, practical solar answers.</h2><p>Choose a topic or search for a question. Each answer is written to help you prepare for a more useful solar assessment.</p></div><FAQExplorer categories={solarFaqCategories} faqs={solarFaqs} /></div></section>

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FAQList } from "@/components/FAQ";
 import { Icon } from "@/components/Icons";
-import { Breadcrumbs, CTA } from "@/components/Primitives";
+import { BreadcrumbSchema, Breadcrumbs, CTA } from "@/components/Primitives";
 import { solarIncentivesData, solarIncentivesFaqs } from "@/data/solarIncentives";
 import { site } from "@/data/site";
 
@@ -37,7 +37,7 @@ export function SolarIncentivesPage() {
       <div className="incentives-hero-rays" aria-hidden="true" />
       <div className="container incentives-hero-inner"><p className="service-label">Sun Direct Renewable · Alberta</p><h1>Solar Incentives and Financing in Alberta</h1><p>Explore current solar financing, micro-generation credits, municipal programs and business tax incentives available to qualifying Alberta properties.</p><div className="incentives-hero-actions"><CTA href="/free-solar-assessment">Get Your Solar Assessment</CTA><CTA href="#overview" secondary>Explore Current Options</CTA></div><p className="reviewed-label"><Icon name="files" />Last reviewed: {solarIncentivesData.lastReviewed}</p></div>
     </section>
-    <Breadcrumbs current="Solar Incentives and Financing in Alberta" />
+    <BreadcrumbSchema current="Solar Incentives and Financing in Alberta" path="/solar-incentives-financing/" /><Breadcrumbs current="Solar Incentives and Financing in Alberta" />
 
     <nav className="incentives-toc" aria-label="On this page"><div className="container"><span>On this page</span><div><a href="#calgary-residential">Calgary CEIP</a><a href="#micro-generation">Micro-generation</a><a href="#business-tax">Business tax</a><a href="#ways-to-pay">Ways to pay</a><a href="#faq">FAQ</a></div></div></nav>
 
