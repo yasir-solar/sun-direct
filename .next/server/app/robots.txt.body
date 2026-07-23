@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: sundirect.ca
+Sitemap: https://sundirect.ca/sitemap.xml

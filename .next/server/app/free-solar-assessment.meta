@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/free-solar-assessment/layout,_N_T_/free-solar-assessment/page,_N_T_/free-solar-assessment"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/free-solar-assessment/__PAGE__",
+    "/free-solar-assessment",
+    "/_index",
+    "/_head"
+  ]
+}
