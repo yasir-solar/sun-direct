@@ -538,3 +538,11 @@ main:has(.solar-hero) h6{font-family:var(--font-poppins),Arial,sans-serif;font-w
 .footer-brand .location-pill:before{content:"";width:7px;height:7px;margin-right:8px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 4px rgba(255,216,77,.1)}
 .footer-brand>p{margin-top:0}
 @media(max-width:760px){.footer .logo-image{flex-basis:210px;width:210px;height:88px}.footer-brand .location-pill{margin-bottom:16px}}
+
+/* Clearer primary navigation */
+@media(min-width:1181px){
+  .desktop-nav{gap:23px;font-family:var(--font-poppins),Arial,sans-serif;font-size:15px}
+  .desktop-nav>a,.nav-dropdown>button{min-height:48px;padding-inline:8px;font-size:15px;font-weight:600;letter-spacing:0}
+  .nav-dropdown>button{gap:9px}
+  .header-cta.button-small{min-height:48px;padding:0 21px;font-family:var(--font-poppins),Arial,sans-serif;font-size:14px;font-weight:700;letter-spacing:0;border-radius:11px}
+}
