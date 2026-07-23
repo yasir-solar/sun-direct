@@ -484,7 +484,7 @@ main:has(.solar-hero) h6{font-family:var(--font-poppins),Arial,sans-serif;font-w
 .more-menu .menu-company-link:nth-of-type(2){margin-bottom:8px;border-radius:0 0 11px 11px}
 
 .nav-shell{height:78px;align-items:center}
-.site-header .logo{transform:translate(-5px,-2px)}
+.site-header .logo{transform:translate(-5px,-5px)}
 .logo{display:flex;align-items:center}
 .logo-image{flex-basis:190px;width:190px;height:76px}
 .desktop-nav{height:100%;align-items:center}
