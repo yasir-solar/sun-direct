@@ -624,6 +624,17 @@ html,body{max-width:100%;overflow-x:clip}
   }
 }
 
+/* Keep the full brand lockup inside the navigation bar at every breakpoint. */
+.site-header .logo{flex:0 0 178px;transform:none}
+.site-header .logo-image{display:block;flex-basis:178px;width:178px;height:68px;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;transform:none}
+.site-header .logo-image img{display:block;width:100%;height:100%;max-width:100%;max-height:none;object-fit:contain;transform:none}
+@media(max-width:760px){
+  .site-header .logo{flex-basis:164px}
+  .site-header .logo-image{flex-basis:164px;width:164px;height:64px}
+  .site-header .header-cta{display:none}
+  .site-header .menu-button{display:grid;margin-left:auto;flex:0 0 46px}
+}
+
 /* Contact-first footer and email contact page */
 .footer-contact{padding-top:72px}
 .footer-contact .footer-top{grid-template-columns:minmax(260px,.9fr) minmax(330px,1.25fr) minmax(185px,.55fr);gap:clamp(36px,6vw,94px);align-items:start}
