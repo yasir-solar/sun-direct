@@ -625,12 +625,12 @@ html,body{max-width:100%;overflow-x:clip}
 }
 
 /* Keep the full brand lockup inside the navigation bar at every breakpoint. */
-.site-header .logo{flex:0 0 225px;transform:none}
-.site-header .logo-image{display:block;flex-basis:225px;width:225px;height:76px;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;transform:none}
+.site-header .logo{flex:0 0 214px;transform:none}
+.site-header .logo-image{display:block;flex-basis:214px;width:214px;height:72px;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;transform:none}
 .site-header .logo-image img{display:block;width:100%;height:100%;max-width:100%;max-height:none;object-fit:contain;transform:none}
 @media(max-width:760px){
-  .site-header .logo{flex-basis:190px}
-  .site-header .logo-image{flex-basis:190px;width:190px;height:68px}
+  .site-header .logo{flex-basis:181px}
+  .site-header .logo-image{flex-basis:181px;width:181px;height:65px}
   .site-header .header-cta{display:none}
   .site-header .menu-button{display:grid;margin-left:auto;flex:0 0 46px}
 }
