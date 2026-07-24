@@ -7,7 +7,7 @@ import { navigation, resourceLinks, serviceLinks } from "@/data/site";
 import { Icon } from "@/components/Icons";
 
 export function Logo() {
-  return <Link href="/" className="logo" aria-label="Sun Direct Renewable home"><span className="logo-image" aria-hidden="true"><Image src="/media/brand/sun-direct-renewable-logo.png" alt="" width={1774} height={887} priority /></span></Link>;
+  return <Link href="/" className="logo" aria-label="Sun Direct Renewable home"><span className="logo-image" aria-hidden="true"><Image src="/media/brand/sun-direct-renewable-logo.png" alt="" width={1499} height={530} priority /></span></Link>;
 }
 
 function Chevron() {
