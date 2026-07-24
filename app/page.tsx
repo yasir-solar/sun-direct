@@ -12,8 +12,6 @@ import { ProjectGallery } from "@/components/ProjectGallery";
 import { VideoShowcase } from "@/components/VideoShowcase";
 import { HomepageHero } from "@/components/HomepageHero";
 import { SolarPaymentOptions } from "@/components/SolarPaymentOptions";
-import { PartnerNetwork } from "@/components/PartnerNetwork";
-import { SolarClubRates } from "@/components/SolarClubRates";
 
 export const metadata: Metadata = { title: { absolute: "Sun Direct Renewable | Residential & Commercial Solar in Alberta" }, description: "Explore residential, commercial and agricultural solar solutions across Alberta with professional support from proposal to activation.", alternates: { canonical: "/" } };
 
@@ -38,8 +36,6 @@ export default function Home() { return <>
   <SolarProcess/>
   <section className="section proposal-section"><div className="container quote-panel"><aside className="quote-side"><p className="kicker light">Start with the facts</p><h2>Your proposal begins with real electricity use.</h2><p>Share the property and usage information that helps shape a responsible system conversation.</p><ul className="check-list">{["No instant savings claims","No one-size-fits-all system","Clear proposal inputs"].map(x=><li key={x}><Icon name="check"/>{x}</li>)}</ul></aside><QuoteForm compact/></div></section>
   <SolarPaymentOptions/>
-  <PartnerNetwork/>
-  <SolarClubRates/>
   <section className="section agriculture-feature"><div className="container feature-split dark-copy"><div className="feature-media"><Image src="/media/installations/ground-mount.webp" alt="Long ground-mounted solar array on open rural land" fill sizes="(max-width:760px) 100vw, 50vw"/></div><div><SectionHeading kicker="Agricultural solar" title="Solar planned around the way your operation works." text="Farm buildings, grain operations, workshops, irrigation, cold storage, greenhouses and rural ground-mounts each require a different energy and site review."/><ul className="check-list">{["Historical consumption","Seasonal load profile","Roof or land area","Service capacity","Equipment schedules","Expansion plans"].map(x=><li key={x}><Icon name="check"/>{x}</li>)}</ul><CTA href="/agricultural-solar">Request a Farm Proposal</CTA></div></div></section>
   <section className="section gallery-home"><div className="wide-container"><SectionHeading kicker="Real installation work" title="Panels, rooflines and systems from the field." text="Explore authentic supplied installation photography across rooftops, rural properties, ground-mounted arrays and active job sites." align="center"/><ProjectGallery limit={8}/><div className="gallery-action"><CTA href="/projects">View All Installations</CTA></div></div></section>
   <VideoShowcase/>

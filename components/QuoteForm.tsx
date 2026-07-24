@@ -13,13 +13,18 @@ export function QuoteForm({ compact = false }: { compact?: boolean }) {
     if (!endpoint) { setStatus("missing"); return; }
     setStatus("sending");
     try {
-      const response = await fetch(endpoint, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } });
+      const formData = new FormData(form);
+      formData.set("recipient", "info@sundirect.ca");
+      formData.set("_to", "info@sundirect.ca");
+      const response = await fetch(endpoint, { method: "POST", body: formData, headers: { Accept: "application/json" } });
       if (!response.ok) throw new Error();
       window.location.href = "/thank-you/";
     } catch { setStatus("error"); }
   }
   return <form className={`quote-form ${compact ? "compact" : ""}`} onSubmit={submit} noValidate={false}>
-    <div className="form-heading"><span className="form-icon"><Icon name="sun"/></span><div><p>Property-specific proposal</p><h2>Tell us about your energy use</h2></div></div>
+    <input type="hidden" name="recipient" value="info@sundirect.ca" />
+    <input type="hidden" name="_to" value="info@sundirect.ca" />
+    <div className="form-heading"><span className="form-icon"><Icon name="sun"/></span><div><p>Solar assessment</p><h2>Tell us about your energy use</h2></div></div>
     <div className="form-grid">
       <label><span className="field-label">Full name</span><input name="name" autoComplete="name" required /></label>
       <label><span className="field-label">Email</span><input name="email" type="email" autoComplete="email" required /></label>
@@ -33,6 +38,6 @@ export function QuoteForm({ compact = false }: { compact?: boolean }) {
     <button className="button submit-button" disabled={status === "sending"}>{status === "sending" ? "Sending..." : "Get My Solar Proposal"}<Icon name="arrow"/></button>
     {status === "missing" && <p className="form-message" role="status">Form delivery is not configured yet. Your information has not been sent. The site owner must add NEXT_PUBLIC_FORM_ENDPOINT.</p>}
     {status === "error" && <p className="form-message error" role="alert">We could not send your request. Please try again after the contact endpoint is confirmed.</p>}
-    <p className="form-fineprint">Your information is used only to review and respond to this request.</p>
+    <p className="form-fineprint">Your assessment is sent to info@sundirect.ca and used only to review and respond to this request.</p>
   </form>;
 }

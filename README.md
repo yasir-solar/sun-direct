@@ -22,7 +22,7 @@ npm.cmd run build
 npx.cmd wrangler deploy
 ```
 
-Set `NEXT_PUBLIC_FORM_ENDPOINT` in Cloudflare before enabling proposal-form delivery. Without an endpoint, the form clearly reports that the submission was not sent.
+Set `NEXT_PUBLIC_FORM_ENDPOINT` in Cloudflare before enabling proposal-form delivery. Configure its delivery destination as `info@sundirect.ca`; this is the required destination for every website inquiry and solar assessment. The form also submits `recipient` and `_to` as `info@sundirect.ca` for providers that support recipient fields. Without an endpoint, the form clearly reports that the submission was not sent.
 
 ## Content and media
 
