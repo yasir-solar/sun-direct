@@ -668,7 +668,11 @@ html,body{max-width:100%;overflow-x:clip}
 .contact-form-section .quote-side{display:flex;flex-direction:column;align-items:flex-start}
 .contact-form-section .quote-side p:not(.kicker){max-width:390px}
 .contact-form-section .quote-side a:not(.button){color:var(--sunlight);text-decoration:underline;text-underline-offset:3px}
-.contact-form-section .button-secondary{margin-top:auto}
+.contact-page-inbox-list{width:100%;margin-top:24px;gap:4px}
+.contact-page-inbox-list a{width:100%;padding:11px 0!important;border-top:1px solid rgba(255,255,255,.14);text-decoration:none!important}
+.contact-page-inbox-list a:last-child{border-bottom:1px solid rgba(255,255,255,.14)}
+.contact-page-inbox-list span{font-size:12px}
+.contact-page-inbox-list strong{font-size:15px}
 
 @media(max-width:1050px){
   .footer-contact .footer-top{grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 48px}
