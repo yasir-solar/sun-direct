@@ -550,6 +550,7 @@ main:has(.solar-hero) h6{font-family:var(--font-poppins),Arial,sans-serif;font-w
 /* Keep the hero artwork flush with the full viewport width. */
 .solar-hero>picture{position:absolute;inset:0;display:block;width:100%;height:100%;overflow:hidden}
 .solar-hero .hero-poster{inset:0;width:100%;height:100%;transform:none}
+.solar-hero .hero-video{filter:none}
 
 /* Coordinated page motion. Content remains visible until JavaScript opts in. */
 html,body{max-width:100%;overflow-x:clip}
