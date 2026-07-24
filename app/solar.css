@@ -636,21 +636,18 @@ html,body{max-width:100%;overflow-x:clip}
 }
 
 /* Contact-first footer and email contact page */
+.final-cta{background:#2b3f5d}
 .footer-contact{padding-top:72px}
-.footer-contact .footer-top{grid-template-columns:minmax(260px,.9fr) minmax(330px,1.25fr) minmax(185px,.55fr);gap:clamp(36px,6vw,94px);align-items:start}
+.footer-contact .footer-top{grid-template-columns:minmax(230px,1.15fr) minmax(205px,1fr) repeat(3,minmax(120px,.65fr));gap:clamp(26px,3.3vw,52px);align-items:start}
 .footer-contact .footer-brand>p{max-width:390px;margin-bottom:0}
 .footer-label{margin:0 0 12px!important;color:var(--sunlight)!important;font-size:10px!important;font-weight:850!important;letter-spacing:.14em;text-transform:uppercase}
-.footer-contact-details h2{max-width:320px;margin:0 0 22px;color:#fff;font-size:clamp(23px,2.2vw,31px);line-height:1.14}
 .footer-inbox-list{display:grid;gap:8px}
-.footer-inbox-list a{display:grid!important;grid-template-columns:minmax(106px,.55fr) 1fr;gap:12px;align-items:center;padding:12px 14px!important;border:1px solid rgba(255,255,255,.13);border-radius:11px;color:#fff!important;background:rgba(255,255,255,.035);transition:border-color .2s,background .2s,transform .2s}
-.footer-inbox-list a:hover{border-color:rgba(255,216,77,.65);background:rgba(255,255,255,.08);transform:translateX(3px)}
+.footer-inbox-list a{display:grid!important;gap:3px;padding:7px 0!important;color:#fff!important;background:transparent;transition:color .2s}
+.footer-inbox-list a:hover{color:var(--sunlight)!important}
 .footer-inbox-list span{color:#c6d0da;font-size:11px;font-weight:650}
 .footer-inbox-list strong{font-size:13px;font-weight:750;overflow-wrap:anywhere}
-.footer-actions{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
-.footer-actions .button{min-width:164px;padding:12px 17px}
-.footer-contact-link{display:inline-flex!important;align-items:center;gap:9px;padding:5px 0!important;color:#eef3f6!important;font-size:13px!important;font-weight:700}
-.footer-contact-link span{font-size:18px;line-height:1;transition:transform .2s}
-.footer-contact-link:hover span{transform:translateX(4px)}
+.footer-nav h2{margin-bottom:13px}
+.footer-nav a{padding:4px 0!important}
 
 .contact-hero{padding-block:104px 80px}
 .contact-inboxes{padding-block:92px;background:#fff}
@@ -674,18 +671,15 @@ html,body{max-width:100%;overflow-x:clip}
 .contact-form-section .button-secondary{margin-top:auto}
 
 @media(max-width:1050px){
-  .footer-contact .footer-top{grid-template-columns:minmax(240px,.85fr) minmax(300px,1.15fr)}
-  .footer-contact .footer-actions{grid-column:2}
+  .footer-contact .footer-top{grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 48px}
+  .footer-contact .footer-brand{grid-row:span 2}
   .contact-inbox-grid{grid-template-columns:1fr 1fr}
   .contact-inbox-card:last-child{grid-column:1/-1;min-height:220px}
 }
 @media(max-width:760px){
   .footer-contact{padding-top:58px}
-  .footer-contact .footer-top{grid-template-columns:1fr;gap:34px}
-  .footer-contact .footer-brand,.footer-contact .footer-actions{grid-column:auto}
-  .footer-inbox-list a{grid-template-columns:1fr;gap:3px}
-  .footer-contact-details h2{font-size:27px}
-  .footer-actions .button{width:100%}
+  .footer-contact .footer-top{grid-template-columns:repeat(2,minmax(0,1fr));gap:31px 24px}
+  .footer-contact .footer-brand,.footer-contact .footer-contact-details{grid-column:1/-1;grid-row:auto}
   .contact-hero{padding-block:78px 62px}
   .contact-inboxes,.contact-form-section{padding-block:68px}
   .contact-inboxes-heading{margin-bottom:29px}
@@ -694,6 +688,7 @@ html,body{max-width:100%;overflow-x:clip}
   .contact-inbox-card,.contact-inbox-card:last-child{grid-column:auto;min-height:0;padding:25px 22px}
   .contact-inbox-card>span{margin-bottom:18px}
 }
+@media(max-width:420px){.footer-contact .footer-top{grid-template-columns:1fr}.footer-contact .footer-brand,.footer-contact .footer-contact-details{grid-column:auto}}
 
 /* Footer brand and credit alignment */
 .footer .logo-image{display:flex;align-items:center;justify-content:center;flex-basis:250px;width:250px;height:104px;padding:10px 15px}
