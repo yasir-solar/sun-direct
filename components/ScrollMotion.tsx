@@ -3,33 +3,45 @@
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
-const revealSelectors = [
-  ".section-heading",
-  ".process-heading",
-  ".quote-panel",
-  ".feature-media",
-  ".feature-split > div:last-child",
-  ".video-intro",
-  ".faq-list",
-  ".final-cta .container",
-  ".page-hero .container",
-  ".content-card",
-].join(",");
+const revealTargets = [
+  { selector: ".section-heading", style: "copy" },
+  { selector: ".process-heading", style: "copy" },
+  { selector: ".proposal-section .quote-side", direction: "left" },
+  { selector: ".proposal-section .quote-form", direction: "right" },
+  { selector: ".payment-heading", style: "copy" },
+  { selector: ".payment-note", style: "scale" },
+  { selector: ".agriculture-feature .feature-media", direction: "left" },
+  { selector: ".agriculture-feature .feature-split > div:last-child", direction: "right" },
+  { selector: ".video-intro", style: "copy" },
+  { selector: ".gallery-action", style: "scale" },
+  { selector: ".faq-list", style: "scale" },
+  { selector: ".final-cta .container", style: "cta" },
+  { selector: ".footer-bottom", style: "footer" },
+];
 
-const groupSelectors = [
-  ".trust-strip .container",
-  ".service-grid",
-  ".process-grid",
-  ".installation-grid",
-  ".video-grid",
-  ".benefit-grid",
-  ".blog-grid",
-].join(",");
+const groupTargets = [
+  { selector: ".trust-strip .container", style: "pop" },
+  { selector: ".service-grid", style: "card" },
+  { selector: ".payment-grid", style: "card" },
+  { selector: ".installation-grid", style: "card" },
+  { selector: ".video-grid", style: "card" },
+  { selector: ".benefit-grid", style: "card" },
+  { selector: ".footer-top", style: "footer" },
+];
+
+function directionFor(group: HTMLElement, index: number) {
+  if (group.matches(".service-grid,.payment-grid")) return index % 3 === 0 ? "left" : index % 3 === 2 ? "right" : "up";
+  if (group.matches(".installation-grid")) return index % 4 === 0 ? "left" : index % 4 === 3 ? "right" : "up";
+  if (group.matches(".video-grid")) return index === 0 ? "left" : "right";
+  if (group.matches(".benefit-grid")) return index % 3 === 0 ? "left" : index % 3 === 2 ? "right" : "up";
+  return "up";
+}
 
 export function ScrollMotion() {
   const pathname = usePathname();
 
   useEffect(() => {
+    if (pathname !== "/") return;
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduceMotion) return;
 
@@ -38,26 +50,26 @@ export function ScrollMotion() {
     let onScroll: (() => void) | undefined;
     const frame = window.requestAnimationFrame(() => {
       const root = document.documentElement;
-      const revealItems = Array.from(document.querySelectorAll<HTMLElement>(revealSelectors));
-      const groups = Array.from(document.querySelectorAll<HTMLElement>(groupSelectors));
+      const revealItems = revealTargets.flatMap((target) => Array.from(document.querySelectorAll<HTMLElement>(target.selector)).map((element) => ({ element, target })));
+      const groups = groupTargets.flatMap((target) => Array.from(document.querySelectorAll<HTMLElement>(target.selector)).map((element) => ({ element, target })));
 
-      revealItems.forEach((element, index) => {
+      revealItems.forEach(({ element, target }, index) => {
         element.classList.add("motion-reveal");
-        if (element.matches(".feature-media")) element.dataset.motionDirection = "left";
-        if (element.matches(".feature-split > div:last-child")) element.dataset.motionDirection = "right";
+        if (target.direction) element.dataset.motionDirection = target.direction;
+        if (target.style) element.dataset.motionStyle = target.style;
         element.style.setProperty("--motion-order", String(index % 2));
         observed.push(element);
       });
 
-      groups.forEach((group) => {
+      groups.forEach(({ element: group, target }) => {
         const children = Array.from(group.children).filter(
           (child): child is HTMLElement => child instanceof HTMLElement,
         );
         children.forEach((element, index) => {
           element.classList.add("motion-reveal");
           element.style.setProperty("--motion-order", String(index));
-          if (group.matches(".service-grid") && index % 3 === 0) element.dataset.motionDirection = "left";
-          if (group.matches(".service-grid") && index % 3 === 2) element.dataset.motionDirection = "right";
+          element.dataset.motionDirection = directionFor(group, index);
+          element.dataset.motionStyle = target.style;
           observed.push(element);
         });
       });
@@ -89,7 +101,7 @@ export function ScrollMotion() {
         const progress = Math.min(1, Math.max(0, window.scrollY / Math.max(hero.offsetHeight, 1)));
         hero.style.setProperty("--hero-progress", progress.toFixed(3));
         hero.style.setProperty("--hero-motion-y", `${progress * 38}px`);
-        hero.style.setProperty("--hero-motion-scale", `${1.04 - progress * 0.04}`);
+        hero.style.setProperty("--hero-motion-scale", `${1.025 - progress * 0.025}`);
         ticking = false;
       };
       onScroll = () => {
@@ -109,6 +121,7 @@ export function ScrollMotion() {
         element.classList.remove("motion-reveal", "motion-visible");
         element.style.removeProperty("--motion-order");
         delete element.dataset.motionDirection;
+        delete element.dataset.motionStyle;
       });
       document.documentElement.classList.remove("motion-ready");
     };
