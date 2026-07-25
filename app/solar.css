@@ -759,6 +759,43 @@ html,body{max-width:100%;overflow-x:clip}
   .nav-dropdown>button{gap:7px}
 }
 
+/* Solar Club rate overview */
+.solar-club-rates{position:relative;overflow:hidden;background:linear-gradient(145deg,#f7fbf7 0%,#fffdf6 48%,#eef5f1 100%)}
+.solar-club-rates:before{content:"";position:absolute;left:-120px;top:80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(248,196,0,.18),transparent 67%);pointer-events:none}
+.solar-rate-grid{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:center;gap:20px;max-width:1050px;margin:0 auto}
+.solar-rate-card{min-height:285px;padding:31px 28px;border:1px solid rgba(7,20,38,.1);border-radius:20px;background:#fff;box-shadow:0 18px 46px rgba(7,20,38,.1);display:flex;flex-direction:column}
+.solar-rate-card.rate-low{min-height:322px;border-color:rgba(0,124,150,.28);background:linear-gradient(180deg,#0d839b 0 84px,#fff 84px)}
+.solar-rate-card p{margin:0;color:var(--navy);font-size:16px;font-weight:800;line-height:1.25}
+.solar-rate-card.rate-low p{color:#fff}
+.solar-rate-card p em{display:block;margin-top:4px;font-size:11px;font-style:normal;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.solar-rate-card strong{display:block;margin:29px 0 20px;color:var(--navy);font-size:clamp(42px,5vw,57px);font-weight:800;line-height:.9;letter-spacing:-.06em}
+.solar-rate-card.rate-pre strong{color:#5c9f35}
+.solar-rate-card.rate-low strong{margin-top:50px;color:#087d96}
+.solar-rate-card.rate-high strong{color:#652159}
+.solar-rate-card small{margin-left:5px;font-size:.42em;font-weight:650;letter-spacing:-.03em}
+.solar-rate-card span{margin-top:auto;padding-top:19px;border-top:2px solid currentColor;color:#53616c;font-size:14px;line-height:1.52}
+.solar-rate-card.rate-pre span{border-color:#6cab42}.solar-rate-card.rate-low span{border-color:#0d839b}.solar-rate-card.rate-high span{border-color:#652159}
+.solar-rate-note{position:relative;max-width:780px;margin:26px auto 0;text-align:center;color:var(--muted);font-size:12px;line-height:1.6}
+
+/* Direct contact details */
+.footer-direct-contact,.contact-direct-details a{display:block!important;padding:7px 0!important;color:#fff!important;text-decoration:none!important}
+.footer-direct-contact span,.contact-direct-details span{display:block;margin-bottom:3px;color:#c6d0da;font-size:11px;font-weight:650}
+.footer-direct-contact strong,.contact-direct-details strong{font-size:13px;font-weight:750;line-height:1.45}
+.footer-direct-contact:hover strong,.contact-direct-details a:hover strong{color:var(--sunlight)}
+.footer-email-label{margin-top:22px!important}
+.contact-direct-details{width:100%;margin-top:24px;padding-block:9px;border-top:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14)}
+.contact-direct-details a{padding:10px 0!important}
+.contact-direct-details strong{font-size:15px}
+
+@media(max-width:760px){
+  .solar-rate-grid{grid-template-columns:1fr;gap:14px}
+  .solar-rate-card,.solar-rate-card.rate-low{min-height:0;padding:27px 23px;background:#fff}
+  .solar-rate-card.rate-low{border-color:rgba(0,124,150,.28)}
+  .solar-rate-card.rate-low p{color:#087d96}
+  .solar-rate-card strong,.solar-rate-card.rate-low strong{margin:22px 0 19px}
+  .solar-rate-card span{margin-top:0}
+}
+
 /* Testimonials */
 .testimonials-proof{background:linear-gradient(180deg,#fffdf6 0%,#f7f8f4 100%)}
 .testimonials-heading{max-width:760px;margin-bottom:54px}

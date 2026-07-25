@@ -5,10 +5,10 @@ export const site = {
   title: "Solar Installation Calgary | Sun Direct Renewable",
   description: "Custom solar solutions for Calgary homes, businesses and farms. Sun Direct Renewable manages proposals, savings analysis, approvals, permits, installation and system activation.",
   location: "Calgary, Alberta",
-  phone: null,
-  email: null,
+  phone: "403-909-9440",
+  email: "info@sundirect.ca",
   hours: null,
-  address: null,
+  address: "303 - 38 Street Southwest, Calgary, AB, Canada",
   social: [],
   serviceAreas: ["Calgary", "Surrounding Alberta communities"],
 } as const;
