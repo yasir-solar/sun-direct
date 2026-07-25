@@ -78,6 +78,7 @@ export function Header() {
           </div>
           <Link href="/our-process">Our Process</Link>
           <Link href="/projects">Projects</Link>
+          <Link href="/testimonials">Testimonials</Link>
           <div className="nav-dropdown more-dropdown">
             <button aria-haspopup="true">More <Chevron/></button>
             <div className="dropdown-menu resource-menu more-menu">
@@ -93,6 +94,7 @@ export function Header() {
         <Link className="mobile-primary-link" href="/" onClick={closeMobileMenu}>Home</Link>
         <div className="mobile-menu-group"><p>Our Services</p>{serviceLinks.map(item => <Link key={item.href} href={item.href} onClick={closeMobileMenu}><span className="mobile-link-icon"><Icon name={item.icon}/></span><span><strong>{item.shortLabel}</strong><small>{item.description}</small></span></Link>)}</div>
         <div className="mobile-menu-main">{navigation.slice(1, 3).map(item => <Link key={item.href} href={item.href} onClick={closeMobileMenu}>{item.label}</Link>)}</div>
+        <Link className="mobile-primary-link" href="/testimonials" onClick={closeMobileMenu}>Testimonials</Link>
         <div className="mobile-menu-group mobile-resources mobile-more"><p>More</p>{moreLinks.map(item => <Link key={item.href} href={item.href} onClick={closeMobileMenu}>{item.label}</Link>)}</div>
         <Link className="button" href="/free-solar-assessment" onClick={closeMobileMenu}>Get Your Solar Proposal</Link>
       </nav>

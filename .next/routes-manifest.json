@@ -107,6 +107,12 @@
       "namedRegex": "^/sitemap\\.xml(?:/)?$"
     },
     {
+      "page": "/testimonials",
+      "regex": "^/testimonials(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/testimonials(?:/)?$"
+    },
+    {
       "page": "/thank-you",
       "regex": "^/thank\\-you(?:/)?$",
       "routeKeys": {},
