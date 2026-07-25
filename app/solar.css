@@ -639,7 +639,8 @@ html,body{max-width:100%;overflow-x:clip}
 .motion-ready .video-grid .motion-reveal.motion-visible:hover{transform:translateY(-4px);box-shadow:0 22px 46px rgba(7,20,38,.12)}
 
 @media(max-width:760px){
-  .solar-hero .hero-inner,.solar-hero .hero-copy,.solar-hero h1,.hero-heading-visual{width:100%;min-width:0;max-width:100%}
+  .solar-hero .hero-inner{width:calc(100% - 40px);min-width:0;max-width:100%}
+  .solar-hero .hero-copy,.solar-hero h1,.hero-heading-visual{width:100%;min-width:0;max-width:100%}
   .hero-typing-word{width:100%;min-width:0}
   .motion-ready .motion-reveal,
   .motion-ready .motion-reveal[data-motion-direction="left"],
@@ -747,3 +748,6 @@ html,body{max-width:100%;overflow-x:clip}
 .footer-bottom p{max-width:none;margin:0;color:#c8d2dc;font-size:12px;line-height:1.65;white-space:nowrap}
 .footer-credit-mobile{display:none}
 @media(max-width:760px){.footer .logo-image{flex-basis:230px;width:230px;height:96px;padding:9px 14px}.footer .logo-image img{width:222px;max-height:85px}.footer-bottom{margin-top:38px;padding-bottom:96px}.footer-bottom p{white-space:normal}.footer-credit-desktop{display:none}.footer-credit-mobile{display:inline}}
+
+/* Keep mobile content comfortably away from the viewport edge. */
+@media(max-width:760px){.container,.wide-container,.nav-shell{width:calc(100% - 40px)}}
