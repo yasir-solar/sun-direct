@@ -3,13 +3,13 @@
   "/_global-error/page": "/_global-error",
   "/robots.txt/route": "/robots.txt",
   "/sitemap.xml/route": "/sitemap.xml",
-  "/blog/page": "/blog",
-  "/free-solar-assessment/page": "/free-solar-assessment",
   "/contact/page": "/contact",
+  "/blog/page": "/blog",
   "/[slug]/page": "/[slug]",
+  "/free-solar-assessment/page": "/free-solar-assessment",
   "/our-process/page": "/our-process",
   "/projects/page": "/projects",
   "/page": "/",
-  "/thank-you/page": "/thank-you",
-  "/testimonials/page": "/testimonials"
+  "/testimonials/page": "/testimonials",
+  "/thank-you/page": "/thank-you"
 }
