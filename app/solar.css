@@ -752,6 +752,13 @@ html,body{max-width:100%;overflow-x:clip}
 /* Keep mobile content comfortably away from the viewport edge. */
 @media(max-width:760px){.container,.wide-container,.nav-shell{width:calc(100% - 40px)}}
 
+/* Tighter desktop navigation rhythm */
+@media(min-width:1181px){
+  .desktop-nav{gap:17px;font-size:13px}
+  .desktop-nav>a,.nav-dropdown>button{padding-inline:5px;font-size:13px}
+  .nav-dropdown>button{gap:7px}
+}
+
 /* Testimonials */
 .testimonials-proof{background:linear-gradient(180deg,#fffdf6 0%,#f7f8f4 100%)}
 .testimonials-heading{max-width:760px;margin-bottom:54px}
