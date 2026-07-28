@@ -15,7 +15,7 @@ export function HomepageHero() {
       aria-hidden="true"
       tabIndex={-1}
     >
-      <source src="/media/videos/homepage-hero-solar-v2.mp4" type="video/mp4" />
+      <source src="/media/videos/homepage-hero-solar-v3.mp4" type="video/mp4" />
     </video>
     <div className="hero-atmosphere" aria-hidden="true"/>
     <div className="hero-rays" aria-hidden="true"/>
