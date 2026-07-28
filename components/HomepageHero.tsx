@@ -1,32 +1,22 @@
-"use client";
-
 import { CTA } from "@/components/Primitives";
 import { TypingWord } from "@/components/TypingWord";
-import { useState } from "react";
-
-const heroImage = "/media/sun-direct-renewable-hero.webp";
 
 export function HomepageHero() {
-  const [videoReady, setVideoReady] = useState(false);
-
-  return <section className={`hero solar-hero${videoReady ? " has-live-video" : ""}`}>
-    <picture>
-      <source media="(max-width: 767px)" srcSet="/media/sun-direct-renewable-hero-768.webp" type="image/webp" />
-      <img className="hero-poster" src={heroImage} alt="Solar-powered Alberta home and sun rays over an open landscape" width={1672} height={941} loading="eager" decoding="async" fetchPriority="high" />
-    </picture>
+  return <section className="hero solar-hero">
     <video
       className="hero-video"
-      src="/media/videos/sun-direct-hero.mp4"
-      poster={heroImage}
       autoPlay
       muted
       loop
       playsInline
       preload="auto"
+      controls={false}
+      disablePictureInPicture
       aria-hidden="true"
       tabIndex={-1}
-      onCanPlay={() => setVideoReady(true)}
-    />
+    >
+      <source src="/media/videos/homepage-hero-solar-v2.mp4" type="video/mp4" />
+    </video>
     <div className="hero-atmosphere" aria-hidden="true"/>
     <div className="hero-rays" aria-hidden="true"/>
     <div className="hero-shine" aria-hidden="true"/>
