@@ -24,6 +24,6 @@ export const installationMedia: InstallationMedia[] = [
 ];
 
 export const installationVideos = [
-  { src: "/media/videos/installation-detail.mp4", poster: "/media/installations/ground-mount.webp", title: "Ground-mounted solar array", description: "A field-level view along a completed ground-mounted solar array.", vertical: true },
-  { src: "/media/videos/rooftop-installation.mp4", poster: "/media/installations/calgary-aerial.webp", title: "Residential rooftop from above", description: "An aerial pass over a completed multi-plane rooftop installation.", vertical: false },
+  { src: "/media/videos/installation-detail.mp4", poster: "/media/installations/ground-mount.webp", title: "Ground-mounted solar array", description: "A field-level view along a completed ground-mounted solar array.", uploadDate: "2026-07-22", vertical: true },
+  { src: "/media/videos/rooftop-installation.mp4", poster: "/media/installations/calgary-aerial.webp", title: "Residential rooftop from above", description: "An aerial pass over a completed multi-plane rooftop installation.", uploadDate: "2026-07-22", vertical: false },
 ] as const;
