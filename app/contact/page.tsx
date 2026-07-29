@@ -4,8 +4,6 @@ import { QuoteForm } from "@/components/QuoteForm";
 
 const inboxes = [
   { label: "General inquiries & solar assessments", email: "info@sundirect.ca" },
-  { label: "Operations", email: "operations@sundirect.ca" },
-  { label: "Our team", email: "team@sundirect.ca" },
 ];
 
 export const metadata: Metadata = {

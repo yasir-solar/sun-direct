@@ -3,8 +3,6 @@ import Image from "next/image";
 
 const inboxes = [
   { label: "General inquiries", email: "info@sundirect.ca" },
-  { label: "Operations", email: "operations@sundirect.ca" },
-  { label: "Our team", email: "team@sundirect.ca" },
 ];
 
 export function Footer() {
