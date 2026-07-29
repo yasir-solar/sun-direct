@@ -4,12 +4,12 @@
   "/robots.txt/route": "app/robots.txt/route.js",
   "/sitemap.xml/route": "app/sitemap.xml/route.js",
   "/blog/page": "app/blog/page.js",
-  "/contact/page": "app/contact/page.js",
-  "/free-solar-assessment/page": "app/free-solar-assessment/page.js",
   "/[slug]/page": "app/[slug]/page.js",
+  "/free-solar-assessment/page": "app/free-solar-assessment/page.js",
+  "/contact/page": "app/contact/page.js",
   "/our-process/page": "app/our-process/page.js",
   "/projects/page": "app/projects/page.js",
   "/page": "app/page.js",
-  "/testimonials/page": "app/testimonials/page.js",
-  "/thank-you/page": "app/thank-you/page.js"
+  "/thank-you/page": "app/thank-you/page.js",
+  "/testimonials/page": "app/testimonials/page.js"
 }

@@ -756,6 +756,27 @@ html,body{max-width:100%;overflow-x:clip}
 /* Keep mobile content comfortably away from the viewport edge. */
 @media(max-width:760px){.container,.wide-container,.nav-shell{width:calc(100% - 40px)}}
 
+/* Clean, tap-to-expand mobile navigation */
+@media(max-width:1320px){
+  .mobile-nav{display:none;padding:18px max(20px,calc((100vw - 680px)/2));background:rgba(255,255,255,.99)}
+  .mobile-nav.is-open{display:grid;gap:6px}
+  .mobile-accordion{border:1px solid var(--soft-border);border-radius:12px;background:#fff;overflow:hidden}
+  .mobile-accordion>button{width:100%;min-height:52px;display:flex;align-items:center;justify-content:space-between;border:0;background:#fff;padding:0 17px;color:var(--navy);font:700 15px/1 var(--font-poppins),Arial,sans-serif;text-align:left;cursor:pointer}
+  .mobile-accordion>button .dropdown-chevron{width:8px;height:8px;transition:transform .2s ease}
+  .mobile-accordion>button[aria-expanded="true"] .dropdown-chevron{transform:rotate(225deg) translate(-1px,-1px)}
+  .mobile-accordion-panel{display:grid;padding:0 10px 10px;border-top:1px solid var(--soft-border)}
+  .mobile-accordion-panel a{padding:12px 8px!important;border-bottom:1px solid rgba(7,20,38,.07)!important;color:var(--navy)!important;font-size:14px;font-weight:600}
+  .mobile-accordion-panel a:last-child{border-bottom:0!important}
+  .mobile-simple-links{display:grid;border:1px solid var(--soft-border);border-radius:12px;background:#fff;overflow:hidden}
+  .mobile-simple-links a{display:flex;align-items:center;min-height:51px;padding:0 17px!important;border-bottom:1px solid var(--soft-border)!important;color:var(--navy)!important;font-size:15px;font-weight:700}
+  .mobile-simple-links a:last-child{border-bottom:0!important}
+  .mobile-nav>.button{margin-top:8px}
+}
+@media(max-width:760px){
+  .mobile-nav{padding:15px 14px;gap:7px}
+  .mobile-accordion>button,.mobile-simple-links a{min-height:50px}
+}
+
 /* Tighter desktop navigation rhythm */
 @media(min-width:1181px){
   .desktop-nav{gap:17px;font-size:13px}

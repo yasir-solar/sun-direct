@@ -22,6 +22,8 @@ const moreLinks = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLElement>(null);
@@ -53,7 +55,11 @@ export function Header() {
     };
   }, [open]);
 
-  const closeMobileMenu = () => setOpen(false);
+  const closeMobileMenu = () => {
+    setOpen(false);
+    setServicesOpen(false);
+    setMoreOpen(false);
+  };
 
   return <>
     <a className="skip-link" href="#main">Skip to main content</a>
@@ -91,11 +97,15 @@ export function Header() {
         <button ref={buttonRef} className="menu-button" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="mobile-menu" aria-label={open ? "Close navigation" : "Open navigation"}><span/><span/><span/></button>
       </div>
       <nav ref={menuRef} id="mobile-menu" className={`mobile-nav ${open ? "is-open" : ""}`} aria-label="Mobile navigation">
-        <Link className="mobile-primary-link" href="/" onClick={closeMobileMenu}>Home</Link>
-        <div className="mobile-menu-group"><p>Our Services</p>{serviceLinks.map(item => <Link key={item.href} href={item.href} onClick={closeMobileMenu}><span className="mobile-link-icon"><Icon name={item.icon}/></span><span><strong>{item.shortLabel}</strong><small>{item.description}</small></span></Link>)}</div>
-        <div className="mobile-menu-main">{navigation.slice(1, 3).map(item => <Link key={item.href} href={item.href} onClick={closeMobileMenu}>{item.label}</Link>)}</div>
-        <Link className="mobile-primary-link" href="/testimonials" onClick={closeMobileMenu}>Testimonials</Link>
-        <div className="mobile-menu-group mobile-resources mobile-more"><p>More</p>{moreLinks.map(item => <Link key={item.href} href={item.href} onClick={closeMobileMenu}>{item.label}</Link>)}</div>
+        <div className="mobile-accordion">
+          <button type="button" onClick={() => setServicesOpen(!servicesOpen)} aria-expanded={servicesOpen} aria-controls="mobile-services">Our Services <Chevron/></button>
+          {servicesOpen && <div id="mobile-services" className="mobile-accordion-panel">{serviceLinks.map(item => <Link key={item.href} href={item.href} onClick={closeMobileMenu}>{item.shortLabel}</Link>)}</div>}
+        </div>
+        <div className="mobile-simple-links">{navigation.slice(1, 3).map(item => <Link key={item.href} href={item.href} onClick={closeMobileMenu}>{item.label}</Link>)}<Link href="/testimonials" onClick={closeMobileMenu}>Testimonials</Link><Link href="/contact" onClick={closeMobileMenu}>Contact</Link></div>
+        <div className="mobile-accordion">
+          <button type="button" onClick={() => setMoreOpen(!moreOpen)} aria-expanded={moreOpen} aria-controls="mobile-more">More <Chevron/></button>
+          {moreOpen && <div id="mobile-more" className="mobile-accordion-panel">{moreLinks.filter(item => item.href !== "/contact").map(item => <Link key={item.href} href={item.href} onClick={closeMobileMenu}>{item.label}</Link>)}</div>}
+        </div>
         <Link className="button" href="/free-solar-assessment" onClick={closeMobileMenu}>Get Your Solar Proposal</Link>
       </nav>
     </header>
