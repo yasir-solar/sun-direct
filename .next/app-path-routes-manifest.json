@@ -4,12 +4,12 @@
   "/robots.txt/route": "/robots.txt",
   "/sitemap.xml/route": "/sitemap.xml",
   "/blog/page": "/blog",
-  "/[slug]/page": "/[slug]",
-  "/free-solar-assessment/page": "/free-solar-assessment",
   "/contact/page": "/contact",
+  "/free-solar-assessment/page": "/free-solar-assessment",
+  "/[slug]/page": "/[slug]",
   "/our-process/page": "/our-process",
   "/projects/page": "/projects",
   "/page": "/",
-  "/thank-you/page": "/thank-you",
-  "/testimonials/page": "/testimonials"
+  "/testimonials/page": "/testimonials",
+  "/thank-you/page": "/thank-you"
 }
