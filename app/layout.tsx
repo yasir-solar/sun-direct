@@ -23,7 +23,7 @@ export const viewport: Viewport = { width: "device-width", initialScale: 1, them
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const schema = { "@context": "https://schema.org", "@graph": [
-    { "@type": "Organization", "@id": `${site.url}/#organization`, name: site.name, url: site.url, logo: `${site.url}/favicon.svg`, areaServed: "Alberta", address: { "@type": "PostalAddress", addressLocality: "Calgary", addressRegion: "AB", addressCountry: "CA" } },
+    { "@type": "Organization", "@id": `${site.url}/#organization`, name: site.name, url: site.url, logo: `${site.url}/favicon.svg`, areaServed: "Alberta", address: { "@type": "PostalAddress", streetAddress: "4360 58 St NE", addressLocality: "Calgary", addressRegion: "AB", postalCode: "T1Y 4S4", addressCountry: "CA" } },
     { "@type": "WebSite", "@id": `${site.url}/#website`, url: site.url, name: site.name, publisher: { "@id": `${site.url}/#organization` }, inLanguage: "en-CA" },
   ]};
   return <html lang="en-CA"><body className={poppins.variable}><Script src="https://www.googletagmanager.com/gtag/js?id=G-7L9KFS05N5" strategy="afterInteractive"/><Script id="google-analytics" strategy="afterInteractive">{`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-7L9KFS05N5');`}</Script><SmoothScroll/><ScrollMotion/><Header/><main id="main">{children}</main><Footer/><div className="mobile-cta"><Link href="/our-process">Our Process</Link><Link className="button" href="/free-solar-assessment">Get Proposal</Link></div><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema)}}/></body></html>;

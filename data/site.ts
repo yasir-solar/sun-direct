@@ -8,7 +8,7 @@ export const site = {
   phone: "403-909-9440",
   email: "info@sundirect.ca",
   hours: null,
-  address: "303 - 38 Street Southwest, Calgary, AB, Canada",
+  address: "4360 58 St NE, Calgary, AB T1Y 4S4, Canada",
   social: [],
   serviceAreas: ["Calgary", "Surrounding Alberta communities"],
 } as const;
