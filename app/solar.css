@@ -748,6 +748,7 @@ html,body{max-width:100%;overflow-x:clip}
 .footer-bottom p{max-width:none;margin:0;color:#c8d2dc;font-size:12px;line-height:1.65;white-space:nowrap}
 .footer-credit-mobile{display:none}
 .footer-credit-by{white-space:nowrap}.footer-credit-by a{display:inline!important;padding:0!important;color:var(--sunlight)!important;font-weight:700;text-decoration:none}.footer-credit-by a:hover{text-decoration:underline;text-underline-offset:3px}
+.footer-bottom .footer-credit-desktop,.footer-bottom .footer-credit-mobile{font-size:0!important}.footer-credit-by{font-size:12px!important}.footer-credit-by:before{content:"Copyright © 2026 Sun Direct Renewable Inc. All rights reserved - ";font-size:12px;color:#c8d2dc}
 @media(max-width:760px){.footer .logo-image{flex-basis:230px;width:230px;height:96px;padding:9px 14px}.footer .logo-image img{width:222px;max-height:85px}.footer-bottom{margin-top:38px;padding-bottom:96px}.footer-bottom p{white-space:normal}.footer-credit-desktop{display:none}.footer-credit-mobile{display:inline}}
 
 /* The homepage hero uses video only on every device and motion setting. */
